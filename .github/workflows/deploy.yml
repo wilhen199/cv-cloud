@@ -48,3 +48,7 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -input=false tfplan
         working-directory: ./terraform
+        
+      - name: Invalidate CloudFront Cache
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} --paths "/*"

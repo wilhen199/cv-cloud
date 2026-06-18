@@ -2,7 +2,7 @@
 
 Este repositorio contiene la arquitectura, el código fuente y el pipeline de automatización para el despliegue de mi Hoja de Vida/CV Digital ejecutándose de manera 100% Serverless sobre Amazon Web Services (AWS).
 
-🌐 **Enlace del Proyecto:** [Hoja de Vida](https://d2oyxs7iqkz3jf.cloudfront.net)
+🌐 **Enlace del Proyecto:** [CV Digital](https://wilhenfigueredo.dev/)
 
 ## 🛠️ Arquitectura del Sistema
 
