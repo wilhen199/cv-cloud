@@ -123,6 +123,7 @@ data "aws_route53_zone" "primary" {
 
 # Certificate SSL/TLS on AWS Certificate Manager (ACM)
 resource "aws_acm_certificate" "cert" {
+  provider          = aws.us_east_1
   domain_name       = "wilhenfigueredo.dev"
   validation_method = "DNS"
 
