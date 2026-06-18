@@ -1,0 +1,18 @@
+# Ignorar la carpeta .terraform y todo su contenido en cualquier subdirectorio
+**/.terraform/
+
+# Ignorar el archivo de lock
+**/.terraform.lock.hcl
+
+# Ignorar archivos de estado de Terraform en cualquier carpeta
+**/*.tfstate
+**/*.tfstate.*
+
+# Ignorar archivos de variables en cualquier carpeta
+**/*.tfvars
+**/*.tfvars.*
+
+# Ignorar planes y logs
+**/*.tfplan
+**/*.log
+**/crash.log
