@@ -16,3 +16,5 @@
 **/*.tfplan
 **/*.log
 **/crash.log
+
+notes.md

@@ -25,7 +25,7 @@
                 <h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight">
                 WILHEN FIGUEREDO HERNÁNDEZ
                 </h1>
-                <p class="text-blue-400 font-semibold mt-2 text-lg">
+                <p class="text-blue-400 font-semibold mt-2 text-lg" data-i18n="header_title">
                     Ingeniero de Telecomunicaciones
                     <span class="text-gray-500">|</span> Cloud Engineer
                     <span class="text-gray-500">|</span> Network Automation Specialist
@@ -51,7 +51,6 @@
             </svg>
                 </a>
             </div>
-
             <!-- CONTACT LINKS & SOCIAL -->
             <div class="mt-6 md:mt-0 flex flex-col items-center md:items-end space-y-3">
                 <a href="mailto:wilhen199@gmail.com" class="flex items-center text-gray-300 hover:text-blue-400 transition">
@@ -62,6 +61,9 @@
                     +57 321 916 8292
                 </span>
                 <div class="flex space-x-4 pt-2">
+                    <button id="lang-toggle"class="bg-slate-800 hover:bg-blue-600 px-4 py-2 rounded-lg text-sm text-white transition">
+                    EN
+                    </button>
                     <a href="https://www.linkedin.com/in/wilhen-figueredo/" target="_blank" class="bg-slate-800 hover:bg-blue-600 p-3 rounded-lg text-white transition shadow-md" title="LinkedIn">
                         <i class="fa-brands fa-linkedin text-xl"></i>
                     </a>
@@ -73,7 +75,6 @@
                     </a>
                 </div>
             </div>
-        </div>
     </header>
 
     <!-- MAIN CONTAINER -->
@@ -81,15 +82,16 @@
         <!-- SECCIÓN PERFIL PROFESIONAL -->
         <section class="bg-slate-800/40 border border-gray-800 p-8 rounded-xl shadow-md backdrop-blur-sm">
             <h2 class="text-xl font-bold text-white mb-4 flex items-center border-b border-gray-700 pb-2">
-              <i class="fa-solid fa-user-tie text-blue-500 mr-2"></i> Perfil
-              Profesional
+              <i class="fa-solid fa-user-tie text-blue-500 mr-2"></i>
+              <span data-i18n="profile_title"> 
+              Perfil Profesional
             </h2>
             <div class="space-y-4 text-sm text-gray-300 leading-relaxed text-justify">
-                <p>
+                <p data-i18n="profile_p1">
                     Ingeniero en Telecomunicaciones con más de 10 años de trayectoria liderando el diseño, despliegue y optimización de infraestructuras críticas en entornos corporativos de alta escala. Con una sólida base en ingeniería de redes y administración de servidores,
                     mi enfoque actual se centra en la convergencia entre la infraestructura robusta y la agilidad mediante la automatización.
                 </p>
-                <p>
+                <p data-i18n="profile_p2">
                     Cuento con una trayectoria destacada gestionando arquitecturas multi-vendor (<span class="text-blue-400">Cisco, Huawei, Fortinet, Extreme</span>) y liderando la transición hacia redes definidas por software
                     (SDN) mediante <span class="text-blue-400">Cisco Catalyst Center</span>. Especialista en la creación de soluciones de automatización con <span class="text-blue-400">Python y Bash</span>, orientadas a la remediación de vulnerabilidades y la eficiencia operativa en entornos L2/L3.
                     Experiencia integral en ecosistemas híbridos (Windows/Linux), monitoreo proactivo con Zabbix y despliegue de soluciones en <span class="text-blue-400">AWS / Azure</span>. Profesional orientado a la alta disponibilidad y la seguridad perimetral, con capacidad probada para ejecutar proyectos estratégicos bajo metodologías ágiles.
@@ -105,6 +107,7 @@
                 <section class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm">
                     <h2 class="text-xl font-bold text-white mb-4 flex items-center border-b border-gray-700 pb-2">
                         <i class="fa-solid fa-award text-blue-500 mr-2"></i>
+                        <span data-i18n="certifications_title">
                         Certificaciones
                     </h2>
                     <div class="space-y-4">
@@ -120,7 +123,7 @@
                                 <p class="text-xs font-semibold text-white leading-tight">
                                     Solutions Architect – Associate
                                 </p>
-                                <a href="https://www.credly.com/earner/earned/badge/9ae9a036-b090-4162-b289-cfbd6f4b562f" target="_blank" class="inline-flex items-center text-[11px] text-blue-400 mt-1.5 hover:underline">
+                                <a href="https://www.credly.com/badges/9ae9a036-b090-4162-b289-cfbd6f4b562f/public_url" target="_blank" class="inline-flex items-center text-[11px] text-blue-400 mt-1.5 hover:underline">
                                     <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Badge details
                                 </a>
                             </div>
@@ -138,7 +141,7 @@
                                 <p class="text-xs font-semibold text-white leading-tight">
                                     Cloud Practitioner
                                 </p>
-                                <a href="https://www.credly.com/earner/earned/badge/62991730-59e4-40d3-a574-318d8bfef326" target="_blank" class="inline-flex items-center text-[11px] text-blue-400 mt-1.5 hover:underline">
+                                <a href="https://www.credly.com/badges/62991730-59e4-40d3-a574-318d8bfef326/public_url" target="_blank" class="inline-flex items-center text-[11px] text-blue-400 mt-1.5 hover:underline">
                                     <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Badge details
                                 </a>
                             </div>
@@ -156,7 +159,7 @@
                                 <p class="text-xs font-semibold text-white leading-tight">
                                     Azure Fundamentals (AZ-900)
                                 </p>
-                                <a href="https://www.credly.com/earner/earned/badge/8dd354bc-476b-4a88-ad1b-64fea6cfb352" target="_blank" class="inline-flex items-center text-[11px] text-blue-400 mt-1.5 hover:underline">
+                                <a href="https://www.credly.com/badges/8dd354bc-476b-4a88-ad1b-64fea6cfb352/public_url" target="_blank" class="inline-flex items-center text-[11px] text-blue-400 mt-1.5 hover:underline">
                                     <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Badge details
                                 </a>
                             </div>
@@ -174,7 +177,7 @@
                                 <p class="text-xs font-semibold text-white leading-tight">
                                     Scrum Master Professional (SMPC)
                                 </p>
-                                <a href="https://www.credly.com/earner/earned/badge/14a8ca4c-8692-49f9-88e6-8857b4740267" target="_blank" class="inline-flex items-center text-[11px] text-blue-400 mt-1.5 hover:underline">
+                                <a href="https://www.credly.com/badges/14a8ca4c-8692-49f9-88e6-8857b4740267/public_url" target="_blank" class="inline-flex items-center text-[11px] text-blue-400 mt-1.5 hover:underline">
                                     <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Badge details
                                 </a>
                             </div>
@@ -186,6 +189,7 @@
                 <section class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm">
                     <h2 class="text-xl font-bold text-white mb-4 flex items-center border-b border-gray-700 pb-2">
                         <i class="fa-solid fa-code text-blue-500 mr-2"></i> 
+                        <span data-i18n="skills_title">
                         Habilidades Técnicas
                     </h2>
                         <div class="space-y-4 text-xs">
@@ -245,41 +249,42 @@
                 <section class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm">
                     <h2 class="text-xl font-bold text-white mb-4 flex items-center border-b border-gray-700 pb-2">
                       <i class="fa-solid fa-rocket text-blue-500 mr-2"></i> 
+                      <span data-i18n="projects_title">
                       Proyectos de Alto Impacto
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="bg-slate-900/60 p-4 rounded-lg border border-gray-800">
                             <span class="text-blue-4xl text-xl mb-1 block"><i class="fa-brands fa-python"></i></span>
                             <h4 class="font-semibold text-white text-sm">
-                              Auditoría Automatizada NetDevOps
+                              <span data-i18n="project_1_title">Auditoría Automatizada NetDevOps</span>
                             </h4>
                             <p class="text-xs text-gray-400 mt-1 leading-relaxed">
-                                <span class="text-white">Desarrollo de herramientas internas en Python (Netmiko / Pandas)</span> para configuración masiva, auditoría y remediación automática de vulnerabilidades en +1000 nodos de red.
+                                <span data-i18n="project_1_description"> <span class="text-white">Desarrollo de herramientas internas en Python (Netmiko / Pandas)</span> para configuración masiva, auditoría y remediación automática de vulnerabilidades en +1000 nodos de red.
                                 <span class="text-white">Resultados: reducción del 30% en tiempos de respuesta y mejora del compliance en un 25% en el primer año.</span>
                             </p>
                         </div>
                         <div class="bg-slate-900/60 p-4 rounded-lg border border-gray-800">
                             <span class="text-blue-4xl text-xl mb-1 block"><i class="fa-solid fa-shield-halved"></i></span>
                             <h4 class="font-semibold text-white text-sm">
-                              Mitigación de Error Operativo
+                              <span data-i18n="project_2_title">Mitigación de Error Operativo</span>
                             </h4>
                             <p class="text-xs text-gray-400 mt-1 leading-relaxed">
-                                <span class="text-white">Creación de scripts de configuración rápida</span> para plataformas <span class="text-white">Cisco IOS-X, NX-OS, Extreme y Huawei</span> mediante Python, reduciendo fallos humanos en 40%.
+                                <span data-i18n="project_2_description">Creación de scripts de configuración rápida</span> para plataformas <span class="text-white">Cisco IOS-X, NX-OS, Extreme y Huawei</span> mediante Python, reduciendo fallos humanos en 40%.
                             </p>
                         </div>
                         <div class="bg-slate-900/60 p-4 rounded-lg border border-gray-800">
                             <span class="text-blue-4xl text-xl mb-1 block"><i class="fa-solid fa-chart-gantt"></i></span>
                             <h4 class="font-semibold text-white text-sm">
-                              Project Management
+                              <span data-i18n="project_3_title">Gestión de Proyectos</span>
                             </h4>
                             <ul class="text-xs text-gray-400 leading-relaxed list-disc pl-4 space-y-3">
-                              <li>
+                              <li data-i18n="project_3_description">
                                 Liderazgo en la actualización masiva de <span class="text-white">400 switches Cisco Serie 9000</span> mediante <span class="text-white">Cisco Catalyst Center</span>, reduciendo la obsolescencia tecnológica y garantizando la seguridad del parque de red regional, pasando de un 14% a 60%.
                               </li>
-                              <li>
-                                <span class="font-bold text-white"></span>Migración</span> exitosa de backup de llamadas de Genesys Cloud a Bucket S3 de AWS (<span class="text-white">Integración Genesys Cloud – AWS S3 </span>), asegurando la disponibilidad y recuperación ante desastres.
+                              <li data-i18n="project_4_description">
+                                <span class="font-bold text-white">Migración</span> exitosa de backup de llamadas de Genesys Cloud a Bucket S3 de AWS (<span class="text-white">Integración Genesys Cloud – AWS S3 </span>), asegurando la disponibilidad y recuperación ante desastres.
                               </li>
-                              <li>
+                              <li data-i18n="project_5_description">
                                 <span class="font-bold text-white">Migración</span> exitosa de infraestructura crítica de telefonía <span class="text-white"> On-Premise a Genesys Cloud</span>, asegurando la continuidad del negocio en 5 países (Tráfico de llamadas, flujos e IVRs).
                               </li>
                             </ul>
@@ -287,19 +292,19 @@
                         <div class="bg-slate-900/60 p-4 rounded-lg border border-gray-800">
                             <span class="text-blue-4xl text-xl mb-1 block"><i class="fa-solid fa-chart-gantt"></i></span>
                             <h4 class="font-semibold text-white text-sm">
-                              Virtualización
+                              <span data-i18n="project_6_title">Virtualización</span>
                             </h4>
                             <ul class="text-xs text-gray-400 leading-relaxed list-disc pl-4 space-y-3">
-                              <li>
+                              <li data-i18n="project_6_description">
                                   Implementación de <span class="text-white">Zabbix</span> para monitoreo de infraestructura TI Linio LATAM
                               </li>
-                              <li>
+                              <li data-i18n="project_7_description">
                                   <span class="text-white">Virtualización de Servidor MySQL</span> para réplica de información y métricas Call Center.
                               </li>
-                              <li>
+                              <li data-i18n="project_8_description">
                                   <span class="text-white">Decomiso</span> reemplazo seguro de sistemas heredados (<span class="text-white">Cisco Prime</span>) debido a vulnerabilidades latentes.
                               </li>
-                              <li>
+                              <li data-i18n="project_9_description">
                                   <span class="text-white">Virtualización de Servidor Linux</span> para almacenamiento de Backup e información de egresos, cuentas de correo.
                               </li>
                             </ul>
@@ -310,6 +315,7 @@
               <section class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm">
                 <h2 class="text-xl font-bold text-white mb-6 flex items-center border-b border-gray-700 pb-2">
                   <i class="fa-solid fa-briefcase text-blue-500 mr-2"></i>
+                  <span data-i18n="experience_title">
                   Experiencia Laboral
                 </h2>
                 <div class="space-y-8 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-gray-800">
@@ -327,27 +333,27 @@
                           Falabella Tecnología Corporativa / Grupo Falabella
                         </p>
                       </div>
-                      <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium mt-1 md:mt-0">
+                      <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium mt-1 md:mt-0" data-i18n="experience_1_dates">
                         Agosto, 2024 – Mayo, 2026
                       </span>
                     </div>
                     <ul class="mt-3 space-y-2 text-sm text-gray-300 list-disc list-inside">
-                      <li>
+                      <li data-i18n="experience_1_description_1">
                       Liderazgo y ejecución de proyectos de infraestructura de red a gran escala, incluyendo la migración y actualización masiva de 400 switches Cisco Serie 9000 mediante Cisco Catalyst Center, pasando de un 14% a 60% en el compliance regional.
                       </li>
-                      <li>
+                      <li data-i18n="experience_1_description_2">
                           Decomiso y reemplazo seguro de sistemas heredados (como Cisco Prime) debido a vulnerabilidades latentes.
                       </li>
-                      <li>
+                      <li data-i18n="experience_1_description_3">
                           Automatización de tareas repetitivas de red mediante scripts en Python y consumo de la API de Netbox, reduciendo tiempos de aprovisionamiento.
                       </li>
-                      <li>
+                      <li data-i18n="experience_1_description_4">
                           Soporte nivel 2 en redes LAN, WLAN y WAN para entornos multi-vendor (Cisco, Huawei, Extreme).
                       </li>
-                      <li>
+                      <li data-i18n="experience_1_description_5">
                           Desarrollo de scripts en Python para tareas de compliance, remediación de vulnerabilidades y configuración masiva.
                       </li>
-                      <li>
+                      <li data-i18n="experience_1_description_6">
                           Coordinación técnica regional con equipos de infraestructura y proveedores (Argentina, Chile, Perú, Colombia).
                       </li>
                     </ul>
@@ -358,31 +364,31 @@
                     <div class="absolute left-1.5 top-1.5 w-4 h-4 rounded-full bg-gray-600 border-4 border-slate-900"></div>
                     <div class="flex flex-col md:flex-row md:justify-between md:items-start">
                         <div>
-                          <h3 class="text-lg font-bold text-white">
+                          <h3 class="text-lg font-bold text-white" data-i18n="experience_2_title">
                           Especialista IT / Platform Engineer
                           </h3>
                             <p class="text-sm font-medium text-blue-4xl">
                                 Linio.com Colombia - LATAM / Falabella.com
                             </p>
                         </div>
-                        <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium mt-1 md:mt-0">
+                        <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium mt-1 md:mt-0" data-i18n="experience_2_dates">
                           Septiembre, 2019 – Agosto, 2024
                         </span>
                     </div>
                     <ul class="mt-3 space-y-2 text-sm text-gray-300 list-disc list-inside">
-                        <li>
+                        <li data-i18n="experience_2_description_1">
                             Administración y soporte L2/L3 para plataforma híbrida de servidores Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu, CentOS).
                         </li>
-                        <li>
+                        <li data-i18n="experience_2_description_2">
                             Migración crítica de telefonía On-Premise (Asterisk) a Genesys Cloud asegurando continuidad en 5 países (flujos, IVRs y tráfico de llamadas).
                         </li>
-                        <li>
+                        <li data-i18n="experience_2_description_3">
                             Administración de seguridad perimetral a través de Firewalls y túneles VPN Site-Site / SSL (Fortinet, Sophos, pfSense).
                         </li>
-                        <li>
+                        <li data-i18n="experience_2_description_4">
                             Implementación y puesta en marcha de Zabbix para el monitoreo proactivo de la infraestructura TI de Linio LATAM.
                         </li>
-                        <li>
+                        <li data-i18n="experience_2_description_5">
                             Gestión integral de licenciamiento y permisos en Office 365 / SharePoint.
                         </li>
                       </ul>
@@ -393,23 +399,25 @@
                       <div class="absolute left-1.5 top-1.5 w-4 h-4 rounded-full bg-gray-600 border-4 border-slate-900"></div>
                       <div class="flex flex-col md:flex-row md:justify-between md:items-start">
                           <div>
-                              <h3 class="text-lg font-bold text-white">Supervisor IT</h3>
+                              <h3 class="text-lg font-bold text-white" data-i18n="experience_3_title">
+                                  Supervisor IT
+                              </h3>
                               <p class="text-sm font-medium text-blue-4xl">
                                   Linio.com Venezuela
                               </p>
                           </div>
-                          <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium mt-1 md:mt-0">
+                          <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium mt-1 md:mt-0" data-i18n="experience_3_dates">
                               Agosto, 2016 – Septiembre, 2019
                           </span>
                       </div>
                       <ul class="mt-3 space-y-2 text-sm text-gray-300 list-disc list-inside">
-                          <li>
+                          <li data-i18n="experience_3_description_1">
                               Análisis profundo de rendimiento de infraestructura tecnológica regional.
                           </li>
-                          <li>
+                          <li data-i18n="experience_3_description_2">
                               Definición, diseño y documentación de procesos clave y políticas internas de Administración de TI.
                           </li>
-                          <li>
+                          <li data-i18n="experience_3_description_3">
                               Administración de centrales telefónicas distribuidas, firewalls perimetrales y tuning de sistemas.
                           </li>
                       </ul>
@@ -423,18 +431,20 @@
                 <section class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm">
                     <h2 class="text-xl font-bold text-white mb-4 flex items-center border-b border-gray-700 pb-2">
                   <i class="fa-solid fa-graduation-cap text-blue-500 mr-2"></i>
-                  Educación
+                    <span data-i18n="education_title">Educación
                 </h2>
                     <div class="flex justify-between items-start text-sm">
                         <div>
                             <h3 class="font-bold text-white">
-                      Pregrado en Ingeniería de Telecomunicaciones
-                    </h3>
+                              <span data-i18n="education_1_title">
+                                Pregrado en Ingeniería de Telecomunicaciones
+                              </span>
+                            </h3>
                             <p class="text-blue-4xl font-medium">
-                                Universidad Nacional Experimental De Las Fuerzas Armadas
+                                Universidad Nacional Experimental De Las Fuerzas Armadas - Venezuela
                             </p>
                         </div>
-                        <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium">
+                        <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium" data-i18n="education_1_dates">
                     Graduado (2012)
                   </span>
                     </div>
@@ -449,6 +459,8 @@
             © 2026 Wilhen Figueredo Hernández. Alojado en infraestructura Serverless de AWS.
         </p>
     </footer>
+<script src="js/translations.js"></script>
+<script src="js/language.js"></script>
 </body>
 
 </html>
