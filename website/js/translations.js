@@ -1,6 +1,10 @@
 const translations = {
   es: {
+    page_title: "Wilhen Figueredo Hernández - CV Digital",
+
     header_title: "Ingeniero de Telecomunicaciones | Cloud Engineer | Network Automation Specialist",
+
+    download_cv: "Descargar CV",
 
     profile_title: "Perfil Profesional",
 
@@ -103,7 +107,11 @@ const translations = {
   },
 
   en: {
+    page_title: "Wilhen Figueredo Hernández - Digital Resume",
+
     header_title: "Telecommunications Engineer | Cloud Engineer | Network Automation Specialist",
+
+    download_cv: "Download CV",
 
     profile_title: "Professional Profile",
 

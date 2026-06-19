@@ -9,6 +9,20 @@ function setLanguage(lang) {
     }
   });
 
+  document.title = translations[lang].page_title;
+
+  const cvButton = document.getElementById("cv-download");
+
+  if (cvButton) {
+    if (lang === "en") {
+      cvButton.href = "./CV_Wilhen_Figueredo_EN.pdf";
+      cvButton.download = "CV_Wilhen_Figueredo_EN.pdf";
+    } else {
+      cvButton.href = "./CV_Wilhen_Figueredo_ES.pdf";
+      cvButton.download = "CV_Wilhen_Figueredo_ES.pdf";
+    }
+  }
+
   localStorage.setItem("language", lang);
 
   document.getElementById("lang-toggle").innerText = lang === "es" ? "EN" : "ES";
