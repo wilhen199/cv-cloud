@@ -32,8 +32,8 @@ El diseño se enfoca en la alta disponibilidad, seguridad perimetral, bajo costo
 │   └── outputs.tf                  # Salidas del sistema
 └── website/
     ├──js/
-        ├── languaje.js             # Funciones pra cambio de idioma (ES/EN). persistencia en localStorage y cambio de idioma dinámico
-        ├── translations.js         # Diccionario de traducciones
+    |   ├── languaje.js             # Funciones pra cambio de idioma (ES/EN). persistencia en localStorage y cambio de idioma dinámico
+    |   ├── translations.js         # Diccionario de traducciones
     ├── index.html                  # Código de la aplicación web (Tailwind CSS)
     ├── CV_Wilhen_Figueredo_ES.pdf  # Versión tradicional del CV descargable en español
     └── CV_Wilhen_Figueredo_EN.pdf  # Versión tradicional del CV descargable en inglés
