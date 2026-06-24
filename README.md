@@ -24,6 +24,15 @@ El diseño se enfoca en la alta disponibilidad, seguridad perimetral, bajo costo
 
 - **Gestión de estado remoto (Remote Backend)** en un bucket S3 dedicado para sincronización segura.
 
+## 🚀 Pipeline de CI/CD (GitOps)
+
+El ciclo de vida de la infraestructura está totalmente automatizado mediante **GitHub Actions**. Al realizar un push o pull request a la rama principal, el pipeline ejecuta el siguiente flujo:
+
+1. **Validación:** Comprobación de sintaxis (`terraform fmt`).
+2. **Planificación:** Simulación segura de los cambios a aplicar (`terraform plan`).
+3. **Despliegue Automático:** Aprovisionamiento real de los recursos y subida de archivos web (`terraform apply`).
+4. **Invalidación de Caché:** Limpieza automática de la CDN de CloudFront mediante AWS CLI para reflejar los cambios en tiempo real.
+
 ## 📁 Estructura del Proyecto
 
 ```text
