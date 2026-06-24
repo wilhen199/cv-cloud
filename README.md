@@ -6,58 +6,21 @@ Este repositorio contiene la arquitectura, el código fuente y el pipeline de au
 
 ## 🛠️ Arquitectura del Sistema
 
-```mermaid
-graph TD
-  subgraph Usuarios
-    U[👤 Visitante]
-  end
-
-  subgraph "🌍 Red Perimetral & Seguridad"
-    DNS[🧭 Amazon Route 53]
-    CDN[⚡ Amazon CloudFront]
-    ACM[🔒 AWS ACM Certificate]
-  end
-
-  subgraph "☁️ AWS Cloud Core"
-    OAC[🛡️ Origin Access Control]
-    S3_Web[(🪣 S3 Bucket: Sitio Web Privado)]
-    S3_TF[(🪣 S3 Bucket: Remote tfstate)]
-  end
-
-  subgraph "⚙️ GitOps & CI/CD"
-    GH[🐙 GitHub Repository]
-    GHA[🤖 GitHub Actions]
-    TF[🏗️ Terraform]
-  end
-
-  %% Flujo del Usuario
-  U -->|1. Petición a wilhenfigueredo.dev| DNS
-  DNS -->|2. Resuelve el alias| CDN
-  ACM -.->|3. Cifra conexión HTTPS| CDN
-  CDN -->|4. Autentica el origen| OAC
-  OAC -->|5. Permite acceso al contenido| S3_Web
-
-  %% Flujo de CI/CD e Infraestructura
-  GH -->|Push a main| GHA
-  GHA -->|1. Init, Plan & Apply| TF
-  GHA -.->|3. AWS CLI: Invalida Caché| CDN
-  TF -.->|Sincroniza memoria| S3_TF
-  TF ==>|2. Aprovisiona AWS & Sube HTML/JS/PDF| S3_Web
-  TF ==>|Configura| CDN
-  TF ==>|Configura| DNS
-```
+<p align="center">
+  <img src="assets/cv-digital.png" alt="Diagrama de Arquitectura AWS" width="850">
+</p>
 
 El diseño se enfoca en la alta disponibilidad, seguridad perimetral, bajo costo y optimización para dispositivos móviles, mitigando las restricciones de protocolos HTTP en redes celulares.
 
 - **Hosting Estático Serverless:** Amazon S3 (configurado en modo privado estricto, bloqueando todo acceso público directo).
 - **Red de Distribución de Contenido (CDN):** Amazon CloudFront para almacenamiento en caché global y aceleración de carga.
 
-* **Control de Acceso (OAC):** Origin Access Control implementado para asegurar que el contenido del bucket S3 solo sea legible a través de la red de CloudFront.
-* **DNS & Seguridad SSL/TLS:** Enrutamiento gestionado con Amazon Route 53 y cifrado en tránsito forzado a HTTPS mediante un certificado nativo de AWS Certificate Manager (ACM).
+- **Control de Acceso (OAC):** Origin Access Control implementado para asegurar que el contenido del bucket S3 solo sea legible a través de la red de CloudFront.
+- **DNS & Seguridad SSL/TLS:** Enrutamiento gestionado con Amazon Route 53 y cifrado en tránsito forzado a HTTPS mediante un certificado nativo de AWS Certificate Manager (ACM).
 
 - **Automatización de Infraestructura:** Terraform (IaC) parametrizado con control dinámico de Content-Types (MIME mapping).
 
-* **Infraestructura como Código (IaC):** Todo el entorno está codificado y gestionado con Terraform, incluyendo control dinámico de Content-Types (MIME mapping) y
+- **Infraestructura como Código (IaC):** Todo el entorno está codificado y gestionado con Terraform, incluyendo control dinámico de Content-Types (MIME mapping) y
 
 - **Gestión de estado remoto (Remote Backend)** en un bucket S3 dedicado para sincronización segura.
 

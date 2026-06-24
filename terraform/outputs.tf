@@ -4,6 +4,6 @@ output "cv_public_url" {
 }
 
 output "domain" {
-  value       = aws_route53_record.www
+  value       = aws_route53_record.www.name
   description = "URL de zona alojada Route53"
 }
