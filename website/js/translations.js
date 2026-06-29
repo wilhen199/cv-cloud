@@ -13,7 +13,7 @@ const translations = {
 
     profile_p2: `Cuento con una trayectoria destacada gestionando arquitecturas multi-vendor (<span class="text-blue-400">Cisco, Huawei, Fortinet, Extreme</span>) y liderando la transición hacia redes definidas por software
                     (SDN) mediante <span class="text-blue-400">Cisco Catalyst Center</span>. Especialista en la creación de soluciones de automatización con <span class="text-blue-400">Python y Bash</span>, orientadas a la remediación de vulnerabilidades y la eficiencia operativa en entornos L2/L3.
-                    Experiencia integral en ecosistemas híbridos (Windows/Linux), monitoreo proactivo con Zabbix y despliegue de soluciones en <span class="text-blue-400">AWS / Azure</span>. Profesional orientado a la alta disponibilidad y la seguridad perimetral, con capacidad probada para ejecutar proyectos estratégicos bajo metodologías ágiles.`,
+                    Experiencia integral en ecosistemas híbridos (<span class="text-blue-400">Windows/Linux</span>), monitoreo proactivo con Zabbix y despliegue de soluciones en <span class="text-blue-400">AWS / Azure</span>. Profesional orientado a la alta disponibilidad y la seguridad perimetral, con capacidad probada para ejecutar proyectos estratégicos bajo metodologías ágiles.`,
 
     certifications_title: "Certificaciones",
 
@@ -71,33 +71,43 @@ const translations = {
 
     experience_3_title: "Supervisor IT",
 
-    experience_1_description_1: "Liderazgo y ejecución de proyectos de infraestructura de red a gran escala, incluyendo la migración y actualización masiva de 400 switches Cisco Serie 9000 mediante Cisco Catalyst Center, pasando de un 14% a 60% en el compliance regional.",
+    experience_1_description_1: "Liderezgo y ejecución de proyectos regionales de networking, seguridad e infraestructura de gran escala en campus corporativo, mejorando la velocidad de despliegue en 15% en Chile, Colombia y Perú.",
 
-    experience_1_description_2: "Decomiso y reemplazo seguro de sistemas heredados (como Cisco Prime) debido a vulnerabilidades latentes.",
+    experience_1_description_2: "Liderazgo y ejecución de migración y actualización masiva de 400 switches Cisco Serie 9000 mediante Cisco Catalyst Center, pasando de un 14% a 60% en el compliance regional.",
 
-    experience_1_description_3: "Automatización de tareas repetitivas de red mediante scripts en Python y consumo de la API de Netbox, reduciendo tiempos de aprovisionamiento.",
+    experience_1_description_3: "Decomiso y reemplazo seguro de sistemas heredados (como Cisco Prime) debido a vulnerabilidades latentes.",
 
-    experience_1_description_4: "Soporte nivel 2 en redes LAN, WLAN y WAN para entornos multi-vendor (Cisco, Huawei, Extreme).",
+    experience_1_description_4: "Automatización de tareas repetitivas de red mediante scripts en Python y consumo de la API de Netbox, reduciendo tiempos de aprovisionamiento.",
 
-    experience_1_description_5: "Desarrollo de scripts en Python para tareas de compliance, remediación de vulnerabilidades y configuración masiva.",
+    experience_1_description_5: "Soporte nivel 2 en redes LAN, WLAN y WAN para entornos multi-vendor (Cisco, Huawei, Extreme).",
 
-    experience_1_description_6: "Coordinación técnica regional con equipos de infraestructura y proveedores (Argentina, Chile, Perú, Colombia).",
+    experience_1_description_6: "Desarrollo de scripts en Python para tareas de compliance, remediación de vulnerabilidades y configuración masiva.",
 
-    experience_2_description_1: "Administración y soporte L2/L3 para plataforma híbrida de servidores Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu, CentOS).",
+    experience_1_description_7: "Coordinación técnica regional con equipos de infraestructura y proveedores (Argentina, Chile, Perú, Colombia).",
+
+    experience_2_description_1: "Administración y soporte L2/L3 para plataforma híbrida de servidores Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu, CentOS).para +500 usuarios, manteniento uptime del 99.9%",
 
     experience_2_description_2: "Migración crítica de telefonía On-Premise (Asterisk) a Genesys Cloud asegurando continuidad en 5 países (flujos, IVRs y tráfico de llamadas).",
 
-    experience_2_description_3: "Administración de seguridad perimetral a través de Firewalls y túneles VPN Site-Site / SSL (Fortinet, Sophos, pfSense).",
+    experience_2_description_3: "Administración central telefónica (Genesys Cloud, Asterisk) para toda la región, con una disponibilidad de 99.3%",
 
-    experience_2_description_4: "Implementación y puesta en marcha de Zabbix para el monitoreo proactivo de la infraestructura TI de Linio LATAM.",
+    experience_2_description_4: "Administración de seguridad perimetral a través de Firewalls y túneles VPN Site-Site / SSL (Fortinet, Sophos, pfSense).",
 
-    experience_2_description_5: "Gestión integral de licenciamiento y permisos en Office 365 / SharePoint.",
+    experience_2_description_5: "Implementación y puesta en marcha de Zabbix para el monitoreo proactivo de la infraestructura TI de Linio LATAM.",
 
-    experience_3_description_1: "Análisis profundo de rendimiento de infraestructura tecnológica regional.",
+    experience_2_description_6: "Gestión integral de licenciamiento y permisos en Office 365 / SharePoint.",
 
-    experience_3_description_2: "Definición, diseño y documentación de procesos clave y políticas internas de Administración de TI.",
+    experience_3_description_1: "Administración Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu Server, CentOS) para +500 usuarios, manteniento uptime del 99.9%.",
 
-    experience_3_description_3: "Administración de centrales telefónicas distribuidas, firewalls perimetrales y tuning de sistemas.",
+    experience_3_description_2: "Administración central telefónica (Asterisk) y base de datos (MySQL) de la solución.",
+
+    experience_3_description_3: "Administración Firewall y VPN Site-Site / VPN SSL (Fortinet, pfSense).",
+
+    experience_3_description_4: "Administración Office 365 (Licenciamiento, Grupos, Permisos en SharePoint).",
+
+    experience_3_description_5: "Implementación y administración Zabbix para infraestructura Linio Venezuela.",
+
+    experience_3_description_6: "Análisis de rendimiento de Infraestructura Tecnológica con wireshark, revisión de logs y zabbix. Definición y documentación de los procesos y políticas de Administración de TI.",
 
     education_title: "Educación",
 
@@ -175,33 +185,43 @@ const translations = {
 
     experience_3_title: "IT Supervisor",
 
-    experience_1_description_1: "Leadership and execution of large-scale network infrastructure projects, including the massive migration and upgrade of 400 Cisco Series 9000 switches using Cisco Catalyst Center, increasing regional compliance from 14% to 60%.",
+    experience_1_description_1: "Management and execution +5 regional networking and security projects on corporate campus, improving deployment speed by 15% across Colombia, Chile and Peru.",
 
-    experience_1_description_2: "Decommissioning and secure replacement of legacy systems (such as Cisco Prime) due to latent vulnerabilities.",
+    experience_1_description_2: "Leadership and execution the mass migration and upgrade of 400 Cisco Catalyst 9000 Series switches using Cisco Catalyst Center, increasing regional compliance from 14% to 60%.",
 
-    experience_1_description_3: "Automation of repetitive network tasks using Python scripts and consumption of the Netbox API, reducing provisioning times.",
+    experience_1_description_3: "Decommissioning and secure replacement of legacy systems (such as Cisco Prime) due to latent vulnerabilities.",
 
-    experience_1_description_4: "Level 2 support in LAN, WLAN, and WAN networks for multi-vendor environments (Cisco, Huawei, Extreme).",
+    experience_1_description_4: "Automation of repetitive network tasks using Python scripts and consumption of the Netbox API, reducing provisioning times.",
 
-    experience_1_description_5: "Development of Python scripts for compliance tasks, vulnerability remediation, and mass configuration.",
+    experience_1_description_5: "Level 2 support in LAN, WLAN, and WAN networks for multi-vendor environments (Cisco, Huawei, Extreme).",
 
-    experience_1_description_6: "Regional technical coordination with infrastructure teams and providers (Argentina, Chile, Peru, Colombia).",
+    experience_1_description_6: "Development of Python scripts for compliance tasks, vulnerability remediation, and mass configuration.",
 
-    experience_2_description_1: "Administration and L2/L3 support for a hybrid platform of Windows Server (Active Directory, GPO, WSUS) and Linux (Ubuntu, CentOS) servers.",
+    experience_1_description_7: "Regional technical coordination with infrastructure teams and providers (Argentina, Chile, Peru, Colombia).",
+
+    experience_2_description_1: "Administration and L2/L3 support for a hybrid platform of Windows Server (Active Directory, GPO, WSUS) and Linux (Ubuntu, CentOS) servers for over 500 users, maintaining 99.9% uptime.",
 
     experience_2_description_2: "Critical migration of On-Premise telephony (Asterisk) to Genesys Cloud ensuring continuity in 5 countries (flows, IVRs, and call traffic).",
 
-    experience_2_description_3: "Administration of perimeter security through Firewalls and Site-Site / SSL VPN tunnels (Fortinet, Sophos, pfSense).",
+    experience_2_description_3: "Centralized telephone system administration (Genesys Cloud, Asterisk) for the entire region, with 99.3% availability.",
 
-    experience_2_description_4: "Implementation and commissioning of Zabbix for proactive monitoring of Linio LATAM's IT infrastructure.",
+    experience_2_description_4: "Administration of perimeter security through Firewalls and Site-Site / SSL VPN tunnels (Fortinet, Sophos, pfSense).",
 
-    experience_2_description_5: "Comprehensive management of licensing and permissions in Office 365 / SharePoint.",
+    experience_2_description_5: "Implementation and commissioning of Zabbix for proactive monitoring of Linio LATAM's IT infrastructure.",
 
-    experience_3_description_1: "In-depth performance analysis of regional technological infrastructure.",
+    experience_2_description_6: "Comprehensive management of licensing and permissions in Office 365 / SharePoint.",
 
-    experience_3_description_2: "Definition, design, and documentation of key processes and internal policies for IT Administration.",
+    experience_3_description_1: "Administration and L2/L3 support for a hybrid platform of Windows Server (Active Directory, GPO, WSUS) and Linux (Ubuntu, CentOS) servers for over 500 users, maintaining 99.9% uptime.",
 
-    experience_3_description_3: "Administration of distributed telephone exchanges, perimeter firewalls, and system tuning.",
+    experience_3_description_2: "Management of the soluion’s PBX Telephony (Asterisk) and database (MySQL).",
+
+    experience_3_description_3: "Firewall and VPN Site-Site / VPN SSL management (Fortinet, Sophos, pfSense)",
+
+    experience_3_description_4: "Office 365 management (Licensing, Groups, Sharepoint permissions)",
+
+    experience_3_description_5: "Implementation and management of zabbix for Linio Venezuela infraestructure.",
+
+    experience_3_description_6: "Performance analysis of infraestructure with wireshark, logs review and zabbix. Definition and documentation of IT administration processes and policies.",
 
     education_title: "Education",
 
