@@ -26,7 +26,8 @@ const translations = {
     project_1_title: "Auditoría Automatizada NetDevOps",
 
     project_1_description: `<span class="text-white">Desarrollo de herramientas internas en Python (Netmiko / Pandas)</span> para configuración masiva, auditoría y remediación automática de vulnerabilidades en +1000 nodos de red.
-                              <span class="text-white">Resultados: reducción del 30% en tiempos de respuesta y mejora del compliance en un 25% en el primer año.</span>`,
+                              <span class="text-white">Resultados: reducción del 30% en tiempos de respuesta y mejora del compliance en un 25% en el primer año.</span>
+                               <a href="https://github.com/wilhen199/networking" target="_blank" rel="noopener noreferrer" class="text-blue-400 underline">Repositorio en GitHub</a>`,
 
     project_2_title: "Mitigación de Error Operativo",
 
@@ -140,7 +141,8 @@ const translations = {
     project_1_title: "Automated NetDevOps",
 
     project_1_description: `<span class="text-white">Development of internal tools in Python (Netmiko / Pandas)</span> for mass configuration, auditing, and automatic remediation of vulnerabilities in +1000 network nodes.
-                              <span class="text-white">Results: 30% reduction in response times and a 25% improvement in compliance in the first year.</span>`,
+                              <span class="text-white">Results: 30% reduction in response times and a 25% improvement in compliance in the first year.</span>
+                              <a href="https://github.com/wilhen199/networking" target="_blank" rel="noopener noreferrer" class="text-blue-400 underline">GitHub repository</a>`,
 
     project_2_title: "Operational Error Mitigation",
 
