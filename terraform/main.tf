@@ -102,6 +102,7 @@ locals {
   mime_types = {
     "html" = "text/html"
     "pdf"  = "application/pdf"
+    "png"  = "image/png"
   }
 }
 
