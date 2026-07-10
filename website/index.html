@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wilhen Figueredo Hernández - CV Digital</title>
     <link rel="icon" type="image/png" href="./favicon.png">
+    <!-- Configuración de Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8MBSLVXB1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-J8MBSLVXB1');
+    </script>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome para Íconos -->
@@ -34,7 +43,10 @@
                 <p class="text-gray-400 mt-1 text-sm">
                     <i class="fa-solid fa-location-dot text-blue-500 mr-2"></i>Bogotá DC, Colombia
                 </p>
-                <a id="cv-download" href="/CV_Wilhen_Figueredo_ES.pdf" download class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                <a id="cv-download" href="/CV_Wilhen_Figueredo_ES.pdf" 
+                download 
+                onclick="gtag('event', 'descarga_cv', { 'idioma': document.documentElement.lang === 'en' ? 'Inglés' : 'Español' });"
+                class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                 <span data-i18n="download_cv">Descargar CV</span>
                 <svg
                   xmlns="http://w3.org"
