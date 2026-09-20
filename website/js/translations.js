@@ -72,7 +72,7 @@ const translations = {
 
     experience_3_title: "Supervisor IT",
 
-    experience_1_description_1: "Liderezgo y ejecución de proyectos regionales de networking, seguridad e infraestructura de gran escala en campus corporativo, mejorando la velocidad de despliegue en 15% en Chile, Colombia y Perú.",
+    experience_1_description_1: "Liderazgo y ejecución de proyectos regionales de networking, seguridad e infraestructura de gran escala en campus corporativo, mejorando la velocidad de despliegue en 15% en Chile, Colombia y Perú.",
 
     experience_1_description_2: "Liderazgo y ejecución de migración y actualización masiva de 400 switches Cisco Serie 9000 mediante Cisco Catalyst Center, pasando de un 14% a 60% en el compliance regional.",
 
