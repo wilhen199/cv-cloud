@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wilhen Figueredo Hernández - CV Digital</title>
+    <title>Wilhen Figueredo Hernández | Network & Cloud Engineer</title>
+    <meta name="description" content="Network & Cloud Engineer | Redes, automatización, AWS y Terraform. Portfolio de Wilhen Figueredo Hernández: proyectos, certificaciones y más de 10 años en infraestructura y redes." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Wilhen Figueredo Hernández | Network & Cloud Engineer" />
+    <meta property="og:description" content="Redes, automatización, AWS y Terraform. Proyectos, certificaciones y más de 10 años en infraestructura y redes." />
+    <meta property="og:url" content="https://wilhenfigueredo.dev/" />
     <link rel="icon" type="image/png" href="./favicon.png" />
     <!-- Configuración de Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8MBSLVXB1"></script>
@@ -25,6 +30,14 @@
       body {
         font-family: "Inter", sans-serif;
       }
+      html {
+        scroll-behavior: smooth;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
     </style>
   </head>
 
@@ -34,17 +47,19 @@
       <div class="max-w-5xl mx-auto text-center md:text-left md:flex md:justify-between md:items-center">
         <div>
           <h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight">WILHEN FIGUEREDO HERNÁNDEZ</h1>
-          <p class="text-blue-400 font-semibold mt-2 text-lg" data-i18n="header_title">
-            Ingeniero de Telecomunicaciones
-            <span class="text-gray-500">|</span> Cloud Engineer <span class="text-gray-500">|</span> Network Automation Specialist
-          </p>
+          <p class="text-blue-400 font-semibold mt-2 text-lg" data-i18n="header_title">Network & Cloud Engineer | Redes · Automatización · AWS · Terraform</p>
+          <p class="text-gray-300 mt-1 text-sm max-w-xl" data-i18n="header_subtitle">Ingeniero de Telecomunicaciones con más de 10 años en infraestructura y redes corporativas</p>
           <p class="text-gray-400 mt-1 text-sm"><i class="fa-solid fa-location-dot text-blue-500 mr-2"></i>Bogotá DC, Colombia</p>
-          <a id="cv-download" href="/CV_Wilhen_Figueredo_ES.pdf" download onclick="gtag('event', 'descarga_cv', { idioma: document.documentElement.lang === 'en' ? 'Inglés' : 'Español' })" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-            <span data-i18n="download_cv">Descargar CV</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-            </svg>
-          </a>
+          <div class="mt-5 flex flex-wrap justify-center md:justify-start gap-3">
+            <a href="#projects" class="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900" data-i18n="cta_cloud">Proyectos cloud</a>
+            <a href="#network-projects" class="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900" data-i18n="cta_network">Proyectos Networking</a>
+            <a id="cv-download" href="/CV_Wilhen_Figueredo_ES.pdf" download onclick="gtag('event', 'descarga_cv', { idioma: document.documentElement.lang === 'en' ? 'Inglés' : 'Español' })" class="inline-flex items-center gap-2 rounded-lg border border-gray-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900">
+              <span data-i18n="download_cv">Descargar CV</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+            </a>
+          </div>
         </div>
         <!-- CONTACT LINKS & SOCIAL -->
         <div class="mt-6 md:mt-0 flex flex-col items-center md:items-end space-y-3">
@@ -78,8 +93,170 @@
           <span data-i18n="profile_title"> Perfil Profesional </span>
         </h2>
         <div class="space-y-4 text-sm text-gray-300 leading-relaxed text-justify">
-          <p data-i18n="profile_p1">Ingeniero en Telecomunicaciones con más de 10 años de trayectoria liderando el diseño, despliegue y optimización de infraestructuras críticas en entornos corporativos de alta escala. Con una sólida base en ingeniería de redes y administración de servidores, mi enfoque actual se centra en la convergencia entre la infraestructura robusta y la agilidad mediante la automatización.</p>
-          <p data-i18n="profile_p2">Cuento con una trayectoria destacada gestionando arquitecturas multi-vendor (<span class="text-blue-400">Cisco, Huawei, Fortinet, Extreme</span>) y liderando la transición hacia redes definidas por software (SDN) mediante <span class="text-blue-400">Cisco Catalyst Center</span>. Especialista en la creación de soluciones de automatización con <span class="text-blue-400">Python y Bash</span>, orientadas a la remediación de vulnerabilidades y la eficiencia operativa en entornos L2/L3. Experiencia integral en ecosistemas híbridos (<span class="text-blue-400">Windows/Linux</span>), monitoreo proactivo con Zabbix y despliegue de soluciones en <span class="text-blue-400">AWS / Azure</span>. Profesional orientado a la alta disponibilidad y la seguridad perimetral, con capacidad probada para ejecutar proyectos estratégicos bajo metodologías ágiles.</p>
+          <p data-i18n="profile_p1">Ingeniero en Telecomunicaciones con más de 10 años operando redes e infraestructura crítica en entornos corporativos de varios paises. Con una sólida base en ingeniería de redes y administración de servidores, redes multi-vendor (<span class="text-blue-400">Cisco, Huawei, Fortinet, Extreme</span>), SDN con <span class="text-blue-400">Cisco Catalyst Center</span>, automatización con <span class="text-blue-400">Python</span>, servidores <span class="text-blue-400">Windows/Linux</span> y monitoreo con <span class="text-blue-400">Zabbix</span>.</p>
+          <p data-i18n="profile_p2">A esa base le sumé infraestructura en la nube: construyo y automatizo arquitecturas en <span class="text-blue-400">AWS con Terraform</span> y automatizo el despliegue con <span class="text-blue-400">GitHub Actions</span>. Tengo las certificaciones AWS Solutions Architect Associate y Cloud Practitioner. Busco roles donde se combinen redes, automatización y cloud.</p>
+        </div>
+      </section>
+
+      <!-- PROYECTOS CLOUD -->
+      <section id="projects" class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm scroll-mt-6">
+        <h2 class="text-xl font-bold text-white mb-2 flex items-center border-b border-gray-700 pb-2">
+          <i class="fa-solid fa-cloud text-blue-500 mr-2"></i>
+          <span data-i18n="projects_title">Proyectos cloud</span>
+        </h2>
+        <p class="text-sm text-gray-400 mb-2" data-i18n="projects_intro">Proyectos personales de laboratorio. Todo el código está en GitHub.</p>
+        <div class="divide-y divide-gray-800">
+          <!-- aws-three-tier -->
+          <article class="py-5">
+            <h3 class="text-base font-semibold text-white"><i class="fa-brands fa-aws"></i> <span data-i18n="proj_1_title">AWS three-tier con Terraform</span></h3>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_1_desc">Arquitectura de tres capas desplegada completamente con Terraform: VPC con subnets públicas y privadas en 2 zonas de disponibilidad, Application Load Balancer, Auto Scaling Group (2 a 4 instancias, escala por CPU) y RDS MySQL con la contraseña en Secrets Manager. Las instancias no tienen IP pública ni SSH: se acceden por SSM. El estado de Terraform vive en S3 con bloqueo en DynamoDB. El README lista las prácticas de seguridad aplicadas y las que faltarían en producción.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Terraform</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">VPC</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">ALB</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Auto Scaling</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">RDS MySQL</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Secrets Manager</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">IAM / SSM</span>
+            </div>
+            <a href="https://github.com/wilhen199/aws-three-tier" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
+          </article>
+
+          <!-- cv-cloud -->
+          <article class="py-5">
+            <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-globe"></i> <span data-i18n="proj_2_title">Este sitio: hosting serverless en AWS</span></h3>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_2_desc">Sitio estático en un bucket S3 privado al que solo accede CloudFront mediante Origin Access Control. Dominio en Route 53 y HTTPS con certificado de ACM. Toda la infraestructura está en Terraform con estado remoto, y GitHub Actions ejecuta el despliegue.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">S3</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">CloudFront</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Origin Access Control</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Route 53</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">ACM</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Terraform</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">GitHub Actions</span>
+            </div>
+            <a href="https://github.com/wilhen199/cv-cloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
+          </article>
+
+          <!-- f1-api -->
+          <article class="py-5">
+            <h3 class="text-base font-semibold text-white flex flex-wrap items-center gap-2">
+              <i class="fa-solid fa-car-side"></i><span data-i18n="proj_3_title">F1 Stats: API en FastAPI y contenedor</span>
+              <span class="text-xs font-medium text-amber-300 border border-amber-500/40 rounded px-2 py-0.5" data-i18n="project_status_wip">En progreso</span>
+            </h3>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_3_desc">Aplicación web con backend asíncrono en FastAPI (httpx), caché en memoria con TTL y bloqueo por URL, pruebas con pytest sin llamadas de red y contenedor Docker. El pipeline de GitHub Actions construye la imagen, levanta el contenedor, verifica su salud y ejecuta los tests. Uso el proyecto como laboratorio de despliegue en AWS (ECS Fargate); la automatización con Terraform está en progreso.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">FastAPI</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Docker</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">GitHub Actions</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">pytest</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">ECS Fargate</span>
+            </div>
+            <a href="https://github.com/wilhen199/f1-api" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
+          </article>
+
+          <!-- monitoring-stack -->
+          <article class="py-5 pb-0">
+            <h3 class="text-base font-semibold text-white"><i class="fa-brands fa-docker"></i> <span data-i18n="proj_4_title">Stack de monitoreo con Docker Compose</span></h3>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_4_desc">Node Exporter, Prometheus y Grafana levantados con un solo comando. El datasource y el dashboard se aprovisionan desde archivos, con health checks, orden de arranque, volúmenes persistentes y red aislada. Complementa mi experiencia previa con Zabbix.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Docker Compose</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Prometheus</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Grafana</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Node Exporter</span>
+            </div>
+            <a href="https://github.com/wilhen199/monitoring-stack" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROYECTOS PROFESIONALES: REDES Y AUTOMATIZACIÓN -->
+      <section id="network-projects" class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm scroll-mt-6">
+        <h2 class="text-xl font-bold text-white mb-2 flex items-center border-b border-gray-700 pb-2">
+          <i class="fa-solid fa-network-wired text-blue-500 mr-2"></i>
+          <span data-i18n="net_title">Proyectos profesionales en redes y automatización</span>
+        </h2>
+        <div class="divide-y divide-gray-800">
+          <article class="py-5">
+            <h3 class="text-base font-semibold text-white"><i class="fa-brands fa-python"></i> <span data-i18n="net_1_title">Auditoría y remediación automática de la red (NetDevOps)</span></h3>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_1_desc">Herramientas internas en Python (Netmiko / Pandas) para auditar, configurar de forma masiva y remediar vulnerabilidades en +1000 nodos de red. Resultado en el primer año: 30% menos de tiempo de respuesta y 25% más de compliance.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Netmiko</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Pandas</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Compliance</span>
+            </div>
+            <a href="https://github.com/wilhen199/networking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
+          </article>
+
+          <article class="py-5">
+            <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="net_2_title">Actualización masiva de 400 switches Cisco Serie 9000</span></h3>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_2_desc">Liderazgo de la migración y actualización con Cisco Catalyst Center para reducir la obsolescencia tecnológica y asegurar el parque de red regional. El compliance regional pasó de 14% a 60%.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Cisco Catalyst Center</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Catalyst 9000</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">SDN</span>
+            </div>
+          </article>
+
+          <article class="py-5">
+            <h3 class="text-base font-semibold text-white"><i class="fa-brands fa-python"></i> <span data-i18n="net_3_title">Scripts de configuración rápida multi-vendor</span></h3>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_3_desc">Scripts en Python para Cisco IOS-X, NX-OS, Extreme y Huawei que redujeron los errores humanos en 40% y los tiempos de resolución.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Cisco IOS-X / NX-OS</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Extreme</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Huawei</span>
+            </div>
+            <a href="https://github.com/wilhen199/networking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
+          </article>
+
+          <article class="py-5">
+            <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-cloud-arrow-up"></i> <span data-i18n="net_4_title">Backup de llamadas de Genesys Cloud a AWS S3</span></h3>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_4_desc">Integración entre Genesys Cloud y un bucket de S3 para asegurar la disponibilidad y la recuperación ante desastres del backup de llamadas.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Genesys Cloud</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">AWS S3</span>
+            </div>
+          </article>
+
+          <article class="py-5">
+            <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-cloud-arrow-up"></i> <span data-i18n="net_5_title">Migración de telefonía On-premise a Genesys Cloud</span></h3>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_5_desc">Migración de infraestructura de telefonía basado en Asterisk hacia Genesys Cloud, asegurando la continuidad del negocio en 5 países (tráfico de llamadas, colas, agentes, flujos e IVRs).</p>
+            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Genesys Cloud</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Asterisk</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Linux</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">MySQL</span>
+            </div>
+          </article>
+
+          <article class="py-5">
+            <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-code"></i> <span data-i18n="net_6_title">Scripts de automatización para Genesys Cloud</span></h3>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_6_desc">Scripts en Python para la automatización, gestión y extracción de datos en la plataforma de Contact Center en la nube Genesys Cloud CX utilizando sus APIs oficiales.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Genesys Cloud</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Pandas</span>
+            </div>
+            <a href="https://github.com/wilhen199/Genesys_Cloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
+          </article>
+
+          <article class="py-5 pb-0">
+            <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-chart-gantt"></i> <span data-i18n="net_7_title">Virtualizaciones</span></h3>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_7_desc1">- Implementación de Zabbix en Linux CentOS para monitoreo de infraestructura TI Linio LATAM.</p>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_7_desc2">- Virtualización de Servidor MySQL en Linux CentOS para réplica de información y métricas Call Center.</p>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_7_desc3">- Decomiso de sistemas heredados (Cisco Prime) debido a vulnerabilidades latentes.</p>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_7_desc4">- Virtualización de Servidor Linux CentOS para almacenamiento de Backup e información de egresos, cuentas de correo.</p>
+
+            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Linux</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">MySQL</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Zabbix</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Proxmox</span>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -148,53 +325,66 @@
           <section class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm">
             <h2 class="text-xl font-bold text-white mb-4 flex items-center border-b border-gray-700 pb-2">
               <i class="fa-solid fa-code text-blue-500 mr-2"></i>
-              <span data-i18n="skills_title"> Habilidades Técnicas </span>
+              <span data-i18n="skills_title">Habilidades técnicas</span>
             </h2>
             <div class="space-y-4 text-xs">
               <div>
-                <span class="text-blue-400 font-semibold block mb-1">Cloud & Infraestructura</span>
+                <span class="text-blue-400 font-semibold block mb-1" data-i18n="skills_cloud">Cloud e infraestructura como código</span>
                 <div class="flex flex-wrap gap-1.5">
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">AWS</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Azure</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Linux</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Windows Server / Active Directory / DNS / GPO</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Virtualización: Hyper-V / Proxmox / Vmware EXSi</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">AWS: VPC / EC2 / ALB / Auto Scaling</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">RDS / S3 / DynamoDB</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">CloudFront / Route 53 / ACM</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">IAM / Secrets Manager / SSM</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Terraform</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800" data-i18n="skill_cloudformation">CloudFormation (básico)</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Azure (AZ-900)</span>
                 </div>
               </div>
               <div>
-                <span class="text-blue-400 font-semibold block mb-1">Networking</span>
+                <span class="text-blue-400 font-semibold block mb-1" data-i18n="skills_networking">Redes</span>
                 <div class="flex flex-wrap gap-1.5">
                   <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Cisco Catalyst Center / DNA Center</span>
                   <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Cisco / Huawei / Extreme</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Firewalls Fortinet / Sophos / pfSense</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Routing protocols: OSPF / BGP / RIP</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">L2 Protocols: VLANs / STP / LACP</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Fortinet / Sophos / pfSense</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">OSPF / BGP / RIP</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">VLANs / STP / LACP</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">SNMP / Wireless (WLAN)</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Cisco IOS-X / NX-OS</span>
                 </div>
               </div>
               <div>
-                <span class="text-blue-400 font-semibold block mb-1">Automatización e IaC</span>
+                <span class="text-blue-400 font-semibold block mb-1" data-i18n="skills_devops">Contenedores y CI/CD</span>
                 <div class="flex flex-wrap gap-1.5">
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python (Netmiko / Pandas / Requests)</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Terraform</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Netbox API / Rest API</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Bash Scripting</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Docker / Docker Compose</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">GitHub Actions</span>
                   <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Git</span>
                 </div>
               </div>
               <div>
-                <span class="text-blue-400 font-semibold block mb-1">Monitoreo y Datos</span>
+                <span class="text-blue-400 font-semibold block mb-1" data-i18n="skills_automation">Automatización</span>
                 <div class="flex flex-wrap gap-1.5">
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Zabbix</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Wireshark</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">MySQL</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Power BI</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python (Netmiko / Pandas / Requests / FastAPI)</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Bash</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Netbox API / REST APIs</span>
                 </div>
               </div>
               <div>
-                <span class="text-blue-400 font-semibold block mb-1">Telefonía</span>
+                <span class="text-blue-400 font-semibold block mb-1" data-i18n="skills_observability">Monitoreo</span>
                 <div class="flex flex-wrap gap-1.5">
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Genesys Cloud</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Asterisk</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Prometheus</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Grafana</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Zabbix</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Wireshark</span>
+                </div>
+              </div>
+              <div>
+                <span class="text-blue-400 font-semibold block mb-1" data-i18n="skills_systems">Sistemas y virtualización</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Linux</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Windows Server / Active Directory / GPO</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Hyper-V / Proxmox / VMware ESXi</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">MySQL</span>
+                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Genesys Cloud / Asterisk</span>
                 </div>
               </div>
             </div>
@@ -203,58 +393,6 @@
 
         <!-- CONTENIDO PRINCIPAL: EXPERIENCIA Y PROYECTOS -->
         <div class="space-y-8 lg:col-span-2">
-          <!-- DESTACADOS / LOGROS CLAVE -->
-          <section class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm">
-            <h2 class="text-xl font-bold text-white mb-4 flex items-center border-b border-gray-700 pb-2">
-              <i class="fa-solid fa-rocket text-blue-500 mr-2"></i>
-              <span data-i18n="projects_title"> Proyectos de Alto Impacto </span>
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="bg-slate-900/60 p-4 rounded-lg border border-gray-800">
-                <span class="text-blue-4xl text-xl mb-1 block"><i class="fa-brands fa-python"></i></span>
-                <h4 class="font-semibold text-white text-sm">
-                  <span data-i18n="project_1_title">Auditoría Automatizada NetDevOps</span>
-                </h4>
-                <p class="text-xs text-gray-400 mt-1 leading-relaxed">
-                  <span data-i18n="project_1_description">
-                    <span class="text-white">Desarrollo de herramientas internas en Python (Netmiko / Pandas)</span> para configuración masiva, auditoría y remediación automática de vulnerabilidades en +1000 nodos de red.
-                    <span class="text-white">Resultados: reducción del 30% en tiempos de respuesta y mejora del compliance en un 25% en el primer año.</span>
-                  </span>
-                </p>
-              </div>
-              <div class="bg-slate-900/60 p-4 rounded-lg border border-gray-800">
-                <span class="text-blue-4xl text-xl mb-1 block"><i class="fa-solid fa-shield-halved"></i></span>
-                <h4 class="font-semibold text-white text-sm">
-                  <span data-i18n="project_2_title">Mitigación de Error Operativo</span>
-                </h4>
-                <p class="text-xs text-gray-400 mt-1 leading-relaxed"><span data-i18n="project_2_description">Creación de scripts de configuración rápida</span> para plataformas <span class="text-white">Cisco IOS-X, NX-OS, Extreme y Huawei</span> mediante Python, reduciendo fallos humanos en 40%.</p>
-              </div>
-              <div class="bg-slate-900/60 p-4 rounded-lg border border-gray-800">
-                <span class="text-blue-4xl text-xl mb-1 block"><i class="fa-solid fa-chart-gantt"></i></span>
-                <h4 class="font-semibold text-white text-sm">
-                  <span data-i18n="project_3_title">Gestión de Proyectos</span>
-                </h4>
-                <ul class="text-xs text-gray-400 leading-relaxed list-disc pl-4 space-y-3">
-                  <li data-i18n="project_3_description">Liderazgo en la actualización masiva de <span class="text-white">400 switches Cisco Serie 9000</span> mediante <span class="text-white">Cisco Catalyst Center</span>, reduciendo la obsolescencia tecnológica y garantizando la seguridad del parque de red regional, pasando de un 14% a 60%.</li>
-                  <li data-i18n="project_4_description"><span class="font-bold text-white">Migración</span> exitosa de backup de llamadas de Genesys Cloud a Bucket S3 de AWS (<span class="text-white">Integración Genesys Cloud – AWS S3 </span>), asegurando la disponibilidad y recuperación ante desastres.</li>
-                  <li data-i18n="project_5_description"><span class="font-bold text-white">Migración</span> exitosa de infraestructura crítica de telefonía <span class="text-white"> On-Premise a Genesys Cloud</span>, asegurando la continuidad del negocio en 5 países (Tráfico de llamadas, flujos e IVRs).</li>
-                </ul>
-              </div>
-              <div class="bg-slate-900/60 p-4 rounded-lg border border-gray-800">
-                <span class="text-blue-4xl text-xl mb-1 block"><i class="fa-solid fa-chart-gantt"></i></span>
-                <h4 class="font-semibold text-white text-sm">
-                  <span data-i18n="project_6_title">Virtualización</span>
-                </h4>
-                <ul class="text-xs text-gray-400 leading-relaxed list-disc pl-4 space-y-3">
-                  <li data-i18n="project_6_description">Implementación de <span class="text-white">Zabbix</span> para monitoreo de infraestructura TI Linio LATAM</li>
-                  <li data-i18n="project_7_description"><span class="text-white">Virtualización de Servidor MySQL</span> para réplica de información y métricas Call Center.</li>
-                  <li data-i18n="project_8_description"><span class="text-white">Decomiso</span> reemplazo seguro de sistemas heredados (<span class="text-white">Cisco Prime</span>) debido a vulnerabilidades latentes.</li>
-                  <li data-i18n="project_9_description"><span class="text-white">Virtualización de Servidor Linux</span> para almacenamiento de Backup e información de egresos, cuentas de correo.</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
           <!-- EXPERIENCA LABORAL -->
           <section class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm">
             <h2 class="text-xl font-bold text-white mb-6 flex items-center border-b border-gray-700 pb-2">
@@ -294,12 +432,11 @@
                   <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium mt-1 md:mt-0" data-i18n="experience_2_dates"> Septiembre, 2019 – Agosto, 2024 </span>
                 </div>
                 <ul class="mt-3 space-y-2 text-sm text-gray-300 list-disc list-inside">
-                  <li data-i18n="experience_2_description_1">Administración y soporte L2/L3 para plataforma híbrida de servidores Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu, CentOS) para +500 usuarios, manteniento uptime del 99.9%.</li>
-                  <li data-i18n="experience_2_description_2">Migración crítica de telefonía On-Premise (Asterisk) a Genesys Cloud asegurando continuidad en 5 países (flujos, IVRs y tráfico de llamadas).</li>
-                  <li data-i18n="experience_2_description_3">Administración central telefónica (Genesys Cloud, Asterisk) para toda la región, con una disponibilidad de 99.3%</li>
-                  <li data-i18n="experience_2_description_4">Administración de seguridad perimetral a través de Firewalls y túneles VPN Site-Site / SSL (Fortinet, Sophos, pfSense).</li>
-                  <li data-i18n="experience_2_description_5">Implementación y puesta en marcha de Zabbix para el monitoreo proactivo de la infraestructura TI de Linio LATAM.</li>
-                  <li data-i18n="experience_2_description_6">Gestión integral de licenciamiento y permisos en Office 365 / SharePoint.</li>
+                  <li data-i18n="experience_2_description_1">Administración y soporte L2/L3 de una plataforma híbrida con Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu, CentOS) para +500 usuarios, con 99.9% de uptime.</li>
+                  <li data-i18n="experience_2_description_2">Migración crítica de telefonía On-Premise (Asterisk) a Genesys Cloud con continuidad en 5 países (flujos, IVRs y tráfico de llamadas), y administración central de la telefonía regional con 99.3% de disponibilidad.</li>
+                  <li data-i18n="experience_2_description_3">Seguridad perimetral con firewalls y túneles VPN Site-Site / SSL (Fortinet, Sophos, pfSense).</li>
+                  <li data-i18n="experience_2_description_4">Implementación de Zabbix para el monitoreo proactivo (alertas y métricas) de la infraestructura TI de Linio LATAM.</li>
+                  <li data-i18n="experience_2_description_5">Virtualización de servidores y servicios con Hyper-V y Proxmox; gestión de licenciamiento y permisos en Office 365 / SharePoint.</li>
                 </ul>
               </div>
 
@@ -314,12 +451,9 @@
                   <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium mt-1 md:mt-0" data-i18n="experience_3_dates"> Agosto, 2016 – Septiembre, 2019 </span>
                 </div>
                 <ul class="mt-3 space-y-2 text-sm text-gray-300 list-disc list-inside">
-                  <li data-i18n="experience_3_description_1">Administración Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu Server, CentOS) para +500 usuarios, manteniento uptime del 99.9%.</li>
-                  <li data-i18n="experience_3_description_2">Administración central telefónica (Asterisk) y base de datos (MySQL) de la solución.</li>
-                  <li data-i18n="experience_3_description_3">Administración Firewall y VPN Site-Site / VPN SSL (Fortinet, pfSense).</li>
-                  <li data-i18n="experience_3_description_4">Administración Office 365 (Licenciamiento, Grupos, Permisos en SharePoint).</li>
-                  <li data-i18n="experience_3_description_5">Implementación y administración Zabbix para infraestructura Linio Venezuela.</li>
-                  <li data-i18n="experience_3_description_6">Análisis de rendimiento de Infraestructura Tecnológica con wireshark, revisión de logs y zabbix. Definición y documentación de los procesos y políticas de Administración de TI.</li>
+                  <li data-i18n="experience_3_description_1">Administración de Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu Server, CentOS) para +500 usuarios, con 99.9% de uptime.</li>
+                  <li data-i18n="experience_3_description_2">Administración de la telefonía Asterisk y la base de datos MySQL de la solución, de firewalls y de VPN Site-Site / SSL.</li>
+                  <li data-i18n="experience_3_description_3">Implementación de Zabbix, análisis de rendimiento con Wireshark y logs, y documentación de los procesos y políticas de administración de TI.</li>
                 </ul>
               </div>
             </div>
@@ -347,7 +481,7 @@
 
     <!-- FOOTER -->
     <footer class="bg-slate-950 border-t border-gray-800 py-6 mt-12 text-center text-xs text-gray-500">
-      <p>© 2026 Wilhen Figueredo Hernández. Alojado en infraestructura Serverless de AWS.</p>
+      <p data-i18n="footer_text">© 2026 Wilhen Figueredo Hernández. Alojado en infraestructura Serverless de AWS.</p>
     </footer>
     <script src="js/translations.js"></script>
     <script src="js/language.js"></script>
