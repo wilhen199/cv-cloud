@@ -1,3 +1,5 @@
+[![Terraform CI CD Pipeline](https://github.com/wilhen199/cv-cloud/actions/workflows/deploy.yml/badge.svg)](https://github.com/wilhen199/cv-cloud/actions/workflows/deploy.yml)
+
 # Cloud-Resume & Infrastructure as Code (IaC) 🚀
 
 Este repositorio contiene la arquitectura, el código fuente y el pipeline de automatización para el despliegue de mi Hoja de Vida/CV Digital ejecutándose de manera 100% Serverless sobre Amazon Web Services (AWS).
