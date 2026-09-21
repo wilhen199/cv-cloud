@@ -116,6 +116,16 @@ resource "aws_s3_object" "upload_website_files" {
   content_type = lookup(local.mime_types, element(split(".", each.value), length(split(".", each.value)) - 1), "application/octet-stream")
 }
 
+resource "aws_s3_object" "upload_assets_files" {
+  for_each = fileset("${path.module}/../assets", "**/*")
+
+  bucket       = aws_s3_bucket.cv_bucket.id
+  key          = "assets/${each.value}"
+  source       = "${path.module}/../assets/${each.value}"
+  etag         = filemd5("${path.module}/../assets/${each.value}")
+  content_type = lookup(local.mime_types, element(split(".", each.value), length(split(".", each.value)) - 1), "application/octet-stream")
+}
+
 # Route 53 (DNS)
 data "aws_route53_zone" "primary" {
   name         = "wilhenfigueredo.dev."
