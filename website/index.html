@@ -63,21 +63,19 @@
         </div>
         <!-- CONTACT LINKS & SOCIAL -->
         <div class="mt-6 md:mt-0 flex flex-col items-center md:items-end space-y-3">
-          <a href="mailto:wilhen199@gmail.com" class="flex items-center text-gray-300 hover:text-blue-400 transition"> <i class="fa-solid fa-envelope mr-2 text-blue-500"></i> wilhen199@gmail.com </a>
-          <span class="text-gray-400 text-sm">
-            <i class="fa-solid fa-phone text-blue-500 mr-2"></i>
-            +57 321 916 8292
-          </span>
           <div class="flex space-x-4 pt-2">
             <button id="lang-toggle" class="bg-slate-800 hover:bg-blue-600 px-4 py-2 rounded-lg text-sm text-white transition">EN</button>
             <a href="https://www.linkedin.com/in/wilhen-figueredo/" target="_blank" class="bg-slate-800 hover:bg-blue-600 p-3 rounded-lg text-white transition shadow-md" title="LinkedIn">
               <i class="fa-brands fa-linkedin text-xl"></i>
             </a>
-            <a href="https://github.com/wilhen199" target="_blank" class="bg-slate-800 hover:bg-gray-700 p-3 rounded-lg text-white transition shadow-md" title="GitHub">
+            <a href="https://github.com/wilhen199" target="_blank" class="bg-slate-800 hover:bg-gray-600 p-3 rounded-lg text-white transition shadow-md" title="GitHub">
               <i class="fa-brands fa-github text-xl"></i>
             </a>
             <a href="https://wa.me/573219168292?text=Hola,%20vi%20tu%20CV%20y%20quiero%20contactarte" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-green-600 p-3 rounded-lg text-white transition shadow-md" title="WhatsApp">
               <i class="fa-brands fa-whatsapp text-xl"></i>
+            </a>
+            <a href="mailto:wilhen199@gmail.com" target="_blank" class="bg-slate-800 hover:bg-blue-600 p-3 rounded-lg text-white transition shadow-md" title="Email">
+              <i class="fa-solid fa-envelope"></i>
             </a>
           </div>
         </div>
@@ -93,7 +91,7 @@
           <span data-i18n="profile_title"> Perfil Profesional </span>
         </h2>
         <div class="space-y-4 text-sm text-gray-300 leading-relaxed text-justify">
-          <p data-i18n="profile_p1">Ingeniero en Telecomunicaciones con más de 10 años operando redes e infraestructura crítica en entornos corporativos de varios paises. Con una sólida base en ingeniería de redes y administración de servidores, redes multi-vendor (<span class="text-blue-400">Cisco, Huawei, Fortinet, Extreme</span>), SDN con <span class="text-blue-400">Cisco Catalyst Center</span>, automatización con <span class="text-blue-400">Python</span>, servidores <span class="text-blue-400">Windows/Linux</span> y monitoreo con <span class="text-blue-400">Zabbix</span>.</p>
+          <p data-i18n="profile_p1">Ingeniero en Telecomunicaciones con más de 10 años operando redes e infraestructura crítica en entornos corporativos de varios países. Con una sólida base en ingeniería de redes y administración de servidores, redes multi-vendor (<span class="text-blue-400">Cisco, Huawei, Fortinet, Extreme</span>), SDN con <span class="text-blue-400">Cisco Catalyst Center</span>, automatización con <span class="text-blue-400">Python</span>, servidores <span class="text-blue-400">Windows/Linux</span> y monitoreo con <span class="text-blue-400">Zabbix</span>.</p>
           <p data-i18n="profile_p2">A esa base le sumé infraestructura en la nube: construyo y automatizo arquitecturas en <span class="text-blue-400">AWS con Terraform</span> y automatizo el despliegue con <span class="text-blue-400">GitHub Actions</span>. Tengo las certificaciones AWS Solutions Architect Associate y Cloud Practitioner. Busco roles donde se combinen redes, automatización y cloud.</p>
         </div>
       </section>
@@ -106,10 +104,30 @@
         </h2>
         <p class="text-sm text-gray-400 mb-2" data-i18n="projects_intro">Proyectos personales de laboratorio. Todo el código está en GitHub.</p>
         <div class="divide-y divide-gray-800">
+          <!-- f1-api -->
+          <article class="py-5">
+            <h3 class="text-base font-semibold text-white flex flex-wrap items-center gap-2">
+              <i class="fa-solid fa-car-side"></i><span data-i18n="proj_1_title">F1 Stats: API en FastAPI y contenedor</span>
+              <span class="text-xs font-medium text-amber-300 border border-amber-500/40 rounded px-2 py-0.5" data-i18n="project_status_wip">En progreso</span>
+            </h3>
+            <img src="/assets/f1-standings-drivers.png" alt="f1-api" />
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_1_desc">Aplicación web con backend asíncrono en FastAPI (httpx), caché en memoria con TTL y bloqueo por URL, pruebas con pytest sin llamadas de red y contenedor Docker. El pipeline de GitHub Actions construye la imagen, levanta el contenedor, verifica su salud y ejecuta los tests. Uso el proyecto como laboratorio de despliegue en AWS (ECS Fargate); la automatización con Terraform está en progreso.</p>
+            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">FastAPI</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Docker</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">GitHub Actions</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">pytest</span>
+              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">ECS Fargate</span>
+            </div>
+            <a href="https://github.com/wilhen199/f1-api" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
+          </article>
+
           <!-- aws-three-tier -->
           <article class="py-5">
-            <h3 class="text-base font-semibold text-white"><i class="fa-brands fa-aws"></i> <span data-i18n="proj_1_title">AWS three-tier con Terraform</span></h3>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_1_desc">Arquitectura de tres capas desplegada completamente con Terraform: VPC con subnets públicas y privadas en 2 zonas de disponibilidad, Application Load Balancer, Auto Scaling Group (2 a 4 instancias, escala por CPU) y RDS MySQL con la contraseña en Secrets Manager. Las instancias no tienen IP pública ni SSH: se acceden por SSM. El estado de Terraform vive en S3 con bloqueo en DynamoDB. El README lista las prácticas de seguridad aplicadas y las que faltarían en producción.</p>
+            <h3 class="text-base font-semibold text-white"><i class="fa-brands fa-aws"></i> <span data-i18n="proj_2_title">AWS three-tier con Terraform</span></h3>
+            <img src="/assets/diagram-aws-three-tier.png" alt="aws-three-tier" />
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_2_desc">Arquitectura de tres capas desplegada completamente con Terraform: VPC con subnets públicas y privadas en 2 zonas de disponibilidad, Application Load Balancer, Auto Scaling Group (2 a 4 instancias, escala por CPU) y RDS MySQL con la contraseña en Secrets Manager. Las instancias no tienen IP pública ni SSH: se acceden por SSM. El estado de Terraform vive en S3 con bloqueo en DynamoDB. El README lista las prácticas de seguridad aplicadas y las que faltarían en producción.</p>
             <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
               <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Terraform</span>
               <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">VPC</span>
@@ -122,44 +140,11 @@
             <a href="https://github.com/wilhen199/aws-three-tier" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
           </article>
 
-          <!-- cv-cloud -->
-          <article class="py-5">
-            <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-globe"></i> <span data-i18n="proj_2_title">Este sitio: hosting serverless en AWS</span></h3>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_2_desc">Sitio estático en un bucket S3 privado al que solo accede CloudFront mediante Origin Access Control. Dominio en Route 53 y HTTPS con certificado de ACM. Toda la infraestructura está en Terraform con estado remoto, y GitHub Actions ejecuta el despliegue.</p>
-            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">S3</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">CloudFront</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Origin Access Control</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Route 53</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">ACM</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Terraform</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">GitHub Actions</span>
-            </div>
-            <a href="https://github.com/wilhen199/cv-cloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
-          </article>
-
-          <!-- f1-api -->
-          <article class="py-5">
-            <h3 class="text-base font-semibold text-white flex flex-wrap items-center gap-2">
-              <i class="fa-solid fa-car-side"></i><span data-i18n="proj_3_title">F1 Stats: API en FastAPI y contenedor</span>
-              <span class="text-xs font-medium text-amber-300 border border-amber-500/40 rounded px-2 py-0.5" data-i18n="project_status_wip">En progreso</span>
-            </h3>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_3_desc">Aplicación web con backend asíncrono en FastAPI (httpx), caché en memoria con TTL y bloqueo por URL, pruebas con pytest sin llamadas de red y contenedor Docker. El pipeline de GitHub Actions construye la imagen, levanta el contenedor, verifica su salud y ejecuta los tests. Uso el proyecto como laboratorio de despliegue en AWS (ECS Fargate); la automatización con Terraform está en progreso.</p>
-            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">FastAPI</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Docker</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">GitHub Actions</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">pytest</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">ECS Fargate</span>
-            </div>
-            <a href="https://github.com/wilhen199/f1-api" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
-          </article>
-
           <!-- monitoring-stack -->
-          <article class="py-5 pb-0">
-            <h3 class="text-base font-semibold text-white"><i class="fa-brands fa-docker"></i> <span data-i18n="proj_4_title">Stack de monitoreo con Docker Compose</span></h3>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_4_desc">Node Exporter, Prometheus y Grafana levantados con un solo comando. El datasource y el dashboard se aprovisionan desde archivos, con health checks, orden de arranque, volúmenes persistentes y red aislada. Complementa mi experiencia previa con Zabbix.</p>
+          <article class="py-5">
+            <h3 class="text-base font-semibold text-white"><i class="fa-brands fa-docker"></i> <span data-i18n="proj_3_title">Stack de monitoreo con Docker Compose</span></h3>
+            <img src="/assets/monitoring-stack.png" alt="monitoring-stack" />
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_3_desc">Node Exporter, Prometheus y Grafana levantados con un solo comando. El datasource y el dashboard se aprovisionan desde archivos, con health checks, orden de arranque, volúmenes persistentes y red aislada. Complementa mi experiencia previa con Zabbix.</p>
             <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
               <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Docker Compose</span>
               <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Prometheus</span>
@@ -169,6 +154,22 @@
             <a href="https://github.com/wilhen199/monitoring-stack" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
           </article>
         </div>
+
+        <!-- cv-cloud -->
+        <article class="py-5 pb-0">
+          <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-globe"></i> <span data-i18n="proj_4_title">Este sitio: hosting serverless en AWS</span></h3>
+          <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_4_desc">Sitio estático en un bucket S3 privado al que solo accede CloudFront mediante Origin Access Control. Dominio en Route 53 y HTTPS con certificado de ACM. Toda la infraestructura está en Terraform con estado remoto, y GitHub Actions ejecuta el despliegue.</p>
+          <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
+            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">S3</span>
+            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">CloudFront</span>
+            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Origin Access Control</span>
+            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Route 53</span>
+            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">ACM</span>
+            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Terraform</span>
+            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">GitHub Actions</span>
+          </div>
+          <a href="https://github.com/wilhen199/cv-cloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
+        </article>
       </section>
 
       <!-- PROYECTOS PROFESIONALES: REDES Y AUTOMATIZACIÓN -->
@@ -247,8 +248,7 @@
             <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-chart-gantt"></i> <span data-i18n="net_7_title">Virtualizaciones</span></h3>
             <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_7_desc1">- Implementación de Zabbix en Linux CentOS para monitoreo de infraestructura TI Linio LATAM.</p>
             <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_7_desc2">- Virtualización de Servidor MySQL en Linux CentOS para réplica de información y métricas Call Center.</p>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_7_desc3">- Decomiso de sistemas heredados (Cisco Prime) debido a vulnerabilidades latentes.</p>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_7_desc4">- Virtualización de Servidor Linux CentOS para almacenamiento de Backup e información de egresos, cuentas de correo.</p>
+            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_7_desc3">- Virtualización de Servidor Linux CentOS para almacenamiento de Backup e información de egresos, cuentas de correo.</p>
 
             <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
               <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Linux</span>
@@ -410,7 +410,7 @@
                   <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium mt-1 md:mt-0" data-i18n="experience_1_dates"> Agosto, 2024 – Mayo, 2026 </span>
                 </div>
                 <ul class="mt-3 space-y-2 text-sm text-gray-300 list-disc list-inside">
-                  <li data-i18n="experience_1_description_1">Liderezgo y ejecución de proyectos regionales de networking, seguridad e infraestructura de gran escala en campus corporativo, mejorando la velocidad de despliegue en 15% en Chile, Colombia y Perú.</li>
+                  <li data-i18n="experience_1_description_1">Liderazgo y ejecución de proyectos regionales de networking, seguridad e infraestructura de gran escala en campus corporativo, mejorando la velocidad de despliegue en 15% en Chile, Colombia y Perú.</li>
                   <li data-i18n="experience_1_description_2">Liderazgo y ejecución de migración y actualización masiva de 400 switches Cisco Serie 9000 mediante Cisco Catalyst Center, pasando de un 14% a 60% en el compliance regional.</li>
                   <li data-i18n="experience_1_description_3">Decomiso y reemplazo seguro de sistemas heredados (como Cisco Prime) debido a vulnerabilidades latentes.</li>
                   <li data-i18n="experience_1_description_4">Automatización de tareas repetitivas de red mediante scripts en Python y consumo de la API de Netbox, reduciendo tiempos de aprovisionamiento.</li>

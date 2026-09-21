@@ -17,17 +17,17 @@ const translations = {
     project_status_wip: "En progreso",
     view_repo: "Ver código en GitHub",
 
-    proj_1_title: "AWS three-tier con Terraform",
-    proj_1_desc: `Arquitectura de tres capas desplegada completamente con Terraform: VPC con subnets públicas y privadas en 2 zonas de disponibilidad, Application Load Balancer, Auto Scaling Group (2 a 4 instancias, escala por CPU) y RDS MySQL con la contraseña en Secrets Manager. Las instancias no tienen IP pública ni SSH: se acceden por SSM. El estado de Terraform vive en S3 con bloqueo en DynamoDB. El README lista las prácticas de seguridad aplicadas y las que faltarían en producción.`,
+    proj_1_title: "F1 Stats: API en FastAPI y contenedor",
+    proj_1_desc: `Aplicación web con backend asíncrono en FastAPI (httpx), caché en memoria con TTL y bloqueo por URL, pruebas con pytest sin llamadas de red y contenedor Docker. El pipeline de GitHub Actions construye la imagen, levanta el contenedor, verifica su salud y ejecuta los tests. Uso el proyecto como laboratorio de despliegue en AWS (ECS Fargate); la automatización con Terraform está en progreso.`,
 
-    proj_2_title: "Este sitio: hosting serverless en AWS",
-    proj_2_desc: `Sitio estático en un bucket S3 privado al que solo accede CloudFront mediante Origin Access Control. Dominio en Route 53 y HTTPS con certificado de ACM. Toda la infraestructura está en Terraform con estado remoto, y GitHub Actions ejecuta el despliegue.`,
+    proj_2_title: "AWS three-tier con Terraform",
+    proj_2_desc: `Arquitectura de tres capas desplegada completamente con Terraform: VPC con subnets públicas y privadas en 2 zonas de disponibilidad, Application Load Balancer, Auto Scaling Group (2 a 4 instancias, escala por CPU) y RDS MySQL con la contraseña en Secrets Manager. Las instancias no tienen IP pública ni SSH: se acceden por SSM. El estado de Terraform vive en S3 con bloqueo en DynamoDB. El README lista las prácticas de seguridad aplicadas y las que faltarían en producción.`,
 
-    proj_3_title: "F1 Stats: API en FastAPI y contenedor",
-    proj_3_desc: `Aplicación web con backend asíncrono en FastAPI (httpx), caché en memoria con TTL y bloqueo por URL, pruebas con pytest sin llamadas de red y contenedor Docker. El pipeline de GitHub Actions construye la imagen, levanta el contenedor, verifica su salud y ejecuta los tests. Uso el proyecto como laboratorio de despliegue en AWS (ECS Fargate); la automatización con Terraform está en progreso.`,
+    proj_3_title: "Stack de monitoreo con Docker Compose",
+    proj_3_desc: `Node Exporter, Prometheus y Grafana levantados con un solo comando. El datasource y el dashboard se aprovisionan desde archivos, con health checks, orden de arranque, volúmenes persistentes y red aislada. Complementa mi experiencia previa con Zabbix.`,
 
-    proj_4_title: "Stack de monitoreo con Docker Compose",
-    proj_4_desc: `Node Exporter, Prometheus y Grafana levantados con un solo comando. El datasource y el dashboard se aprovisionan desde archivos, con health checks, orden de arranque, volúmenes persistentes y red aislada. Complementa mi experiencia previa con Zabbix.`,
+    proj_4_title: "Este sitio: hosting serverless en AWS",
+    proj_4_desc: `Sitio estático en un bucket S3 privado al que solo accede CloudFront mediante Origin Access Control. Dominio en Route 53 y HTTPS con certificado de ACM. Toda la infraestructura está en Terraform con estado remoto, y GitHub Actions ejecuta el despliegue.`,
 
     net_title: "Proyectos profesionales en redes y automatización",
     net_1_title: "Auditoría y remediación automática de la red (NetDevOps)",
@@ -45,8 +45,7 @@ const translations = {
     net_7_title: "Virtualizaciones",
     net_7_desc1: "- Implementación de Zabbix en Linux CentOS para monitoreo de infraestructura TI Linio LATAM.",
     net_7_desc2: "- Virtualización de Servidor MySQL en Linux CentOS para réplica de información y métricas Call Center.",
-    net_7_desc3: "- Decomiso de sistemas heredados (Cisco Prime) debido a vulnerabilidades latentes.",
-    net_7_desc4: "- Virtualización de Servidor Linux CentOS para almacenamiento de Backup e información de egresos, cuentas de correo.",
+    net_7_desc3: "- Virtualización de Servidor Linux CentOS para almacenamiento de Backup e información de egresos, cuentas de correo.",
 
     certifications_title: "Certificaciones",
 
@@ -70,7 +69,7 @@ const translations = {
     experience_1_description_6: "Desarrollo de scripts en Python para tareas de compliance, remediación de vulnerabilidades y configuración masiva.",
     experience_1_description_7: "Coordinación técnica regional con equipos de infraestructura, proveedores y seguridad (Argentina, Chile, Perú, Colombia).",
 
-    experience_2_title: "Especialista IT / Platform Engineer",
+    experience_2_title: "Platform Engineer",
     experience_2_dates: "Septiembre, 2019 – Agosto, 2024",
     experience_2_description_1: "Administración y soporte L2/L3 de una plataforma híbrida con Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu, CentOS) para +500 usuarios, con 99.9% de uptime.",
     experience_2_description_2: "Migración crítica de telefonía On-Premise (Asterisk) a Genesys Cloud con continuidad en 5 países (flujos, IVRs y tráfico de llamadas), y administración central de la telefonía regional con 99.3% de disponibilidad.",
@@ -109,17 +108,17 @@ const translations = {
     project_status_wip: "In progress",
     view_repo: "View code on GitHub",
 
-    proj_1_title: "AWS three-tier with Terraform",
-    proj_1_desc: `Three-tier architecture deployed entirely with Terraform: a VPC with public and private subnets across 2 availability zones, an Application Load Balancer, an Auto Scaling Group (2 to 4 instances, scaling on CPU), and RDS MySQL with the password stored in Secrets Manager. Instances have no public IP and no SSH: access is through SSM. Terraform state lives in S3 with locking in DynamoDB. The README lists the security practices applied and the ones still missing for production.`,
+    proj_1_title: "F1 Stats: FastAPI API and container",
+    proj_1_desc: `Web application with an async FastAPI backend (httpx), an in-memory TTL cache with per-URL locking, pytest tests with no network calls, and a Docker container. The GitHub Actions pipeline builds the image, starts the container, checks its health, and runs the tests. I use the project as an AWS deployment lab (ECS Fargate); automation with Terraform is in progress.`,
 
-    proj_2_title: "This site: serverless hosting on AWS",
-    proj_2_desc: `Static site in a private S3 bucket that only CloudFront can read, through Origin Access Control. Domain on Route 53 and HTTPS with an ACM certificate. All infrastructure is in Terraform with remote state, and GitHub Actions runs the deployment.`,
+    proj_2_title: "AWS three-tier with Terraform",
+    proj_2_desc: `Three-tier architecture deployed entirely with Terraform: a VPC with public and private subnets across 2 availability zones, an Application Load Balancer, an Auto Scaling Group (2 to 4 instances, scaling on CPU), and RDS MySQL with the password stored in Secrets Manager. Instances have no public IP and no SSH: access is through SSM. Terraform state lives in S3 with locking in DynamoDB. The README lists the security practices applied and the ones still missing for production.`,
 
-    proj_3_title: "F1 Stats: FastAPI API and container",
-    proj_3_desc: `Web application with an async FastAPI backend (httpx), an in-memory TTL cache with per-URL locking, pytest tests with no network calls, and a Docker container. The GitHub Actions pipeline builds the image, starts the container, checks its health, and runs the tests. I use the project as an AWS deployment lab (ECS Fargate); automation with Terraform is in progress.`,
+    proj_3_title: "Monitoring stack with Docker Compose",
+    proj_3_desc: `Node Exporter, Prometheus, and Grafana started with a single command. The datasource and dashboard are provisioned from files, with health checks, startup ordering, persistent volumes, and an isolated network. It complements my earlier experience with Zabbix.`,
 
-    proj_4_title: "Monitoring stack with Docker Compose",
-    proj_4_desc: `Node Exporter, Prometheus, and Grafana started with a single command. The datasource and dashboard are provisioned from files, with health checks, startup ordering, persistent volumes, and an isolated network. It complements my earlier experience with Zabbix.`,
+    proj_4_title: "This site: serverless hosting on AWS",
+    proj_4_desc: `Static site in a private S3 bucket that only CloudFront can read, through Origin Access Control. Domain on Route 53 and HTTPS with an ACM certificate. All infrastructure is in Terraform with remote state, and GitHub Actions runs the deployment.`,
 
     net_title: "Professional projects in networking and automation",
     net_1_title: "Automated network auditing and remediation (NetDevOps)",
@@ -162,7 +161,7 @@ const translations = {
     experience_1_description_6: "Developed Python scripts for compliance tasks, vulnerability remediation, and bulk configuration.",
     experience_1_description_7: "Regional technical coordination with infrastructure, vendor, and security teams (Argentina, Chile, Peru, Colombia).",
 
-    experience_2_title: "IT Specialist / Platform Engineer",
+    experience_2_title: "Platform Engineer",
     experience_2_dates: "September, 2019 – August, 2024",
     experience_2_description_1: "Administration and L2/L3 support for a hybrid platform of Windows Server (Active Directory, GPO, WSUS) and Linux (Ubuntu, CentOS) for over 500 users, with 99.9% uptime.",
     experience_2_description_2: "Critical migration of On-Premise telephony (Asterisk) to Genesys Cloud with continuity across 5 countries (flows, IVRs, and call traffic), and central administration of regional telephony with 99.3% availability.",
