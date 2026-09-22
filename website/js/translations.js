@@ -135,7 +135,7 @@ const translations = {
     stat_3_label: "Cisco 9000 Series switches upgraded",
     stat_4_label: "cloud certifications: AWS ×2 and Azure",
     stat_4_label: "AWS Certifications",
-    stat_5_label: "Azure Certificacion",
+    stat_5_label: "Azure Certification",
     download_cv: "Download CV",
 
     profile_title: "Professional Profile",
