@@ -139,7 +139,7 @@ const translations = {
     download_cv: "Download CV",
 
     profile_title: "Professional Profile",
-    profile_p1: `Telecommunications Engineer with over 10 years operating networks and critical infrastructure in multi-country corporate environments: multi-vendor networks (<span class="text-blue-400">Cisco, Huawei, Fortinet, Extreme</span>), SDN with <span class="text-blue-400">Cisco Catalyst Center</span>, automation with <span class="text-blue-400">Python</span>, <span class="text-blue-400">Windows/Linux</span> servers, and Zabbix monitoring.`,
+    profile_p1: `Telecommunications Engineer with over 10 years operating networks and critical infrastructure in multi-country corporate environments: multi-vendor networks (<span class="text-blue-400">Cisco, Huawei, Fortinet, Extreme</span>), SDN with <span class="text-blue-400">Cisco Catalyst Center</span>, automation with <span class="text-blue-400">Python</span>, <span class="text-blue-400">Windows/Linux</span> servers, and <span class="text-blue-400">Zabbix</span> monitoring.`,
     profile_p2: `On top of that base I added cloud infrastructure: I build and automate architectures on <span class="text-blue-400">AWS with Terraform</span> and automate deployments with <span class="text-blue-400">GitHub Actions</span>. I hold the AWS Solutions Architect Associate and Cloud Practitioner certifications. I am looking for roles that combine networking, automation, and cloud.`,
 
     projects_title: "Projects",
