@@ -25,8 +25,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome para Íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
       body {
         font-family: "Inter", sans-serif;
       }
@@ -38,451 +40,573 @@
           scroll-behavior: auto;
         }
       }
+      .is-hidden {
+        display: none !important;
+      }
+      .filter-btn[aria-pressed="true"] {
+        background-color: #2563eb;
+        border-color: #2563eb;
+        color: #ffffff;
+      }
+      dialog::backdrop {
+        background: rgb(0 0 0 / 0.8);
+      }
     </style>
   </head>
 
   <body class="bg-gray-900 text-gray-100 antialiased selection:bg-blue-500 selection:text-white">
-    <!-- TOP HEADER / HERO -->
-    <header class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border-b border-gray-800 py-12 px-4 shadow-xl">
-      <div class="max-w-5xl mx-auto text-center md:text-left md:flex md:justify-between md:items-center">
-        <div>
-          <h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight">WILHEN FIGUEREDO HERNÁNDEZ</h1>
-          <p class="text-blue-400 font-semibold mt-2 text-lg" data-i18n="header_title">Network & Cloud Engineer | Redes · Automatización · AWS · Terraform</p>
-          <p class="text-gray-300 mt-1 text-sm max-w-xl" data-i18n="header_subtitle">Ingeniero de Telecomunicaciones con más de 10 años en infraestructura y redes corporativas</p>
-          <p class="text-gray-400 mt-1 text-sm"><i class="fa-solid fa-location-dot text-blue-500 mr-2"></i>Bogotá DC, Colombia</p>
-          <div class="mt-5 flex flex-wrap justify-center md:justify-start gap-3">
-            <a href="#projects" class="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900" data-i18n="cta_cloud">Proyectos cloud</a>
-            <a href="#network-projects" class="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900" data-i18n="cta_network">Proyectos Networking</a>
-            <a id="cv-download" href="/CV_Wilhen_Figueredo_ES.pdf" download onclick="gtag('event', 'descarga_cv', { idioma: document.documentElement.lang === 'en' ? 'Inglés' : 'Español' })" class="inline-flex items-center gap-2 rounded-lg border border-gray-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-white" data-i18n="skip_link">Saltar al contenido</a>
+
+    <!-- NAVEGACIÓN -->
+    <header class="sticky top-0 z-40 border-b border-gray-800 bg-slate-950/85 backdrop-blur">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+
+        
+
+        <div class="flex items-center gap-3">
+          <img src="/assets/cv_profile.jpg" alt="Wilhen Figueredo" class="w-16 h-16 rounded-full">
+          <a href="#top" class="text-sm font-semibold tracking-tight text-white">Wilhen Figueredo</a>
+        </div>
+
+
+
+
+        <div class="flex items-center gap-6">
+          <ul class="hidden items-center gap-6 text-sm text-gray-300 md:flex">
+            <li><a href="#about" class="transition-colors hover:text-white" data-i18n="nav_about">Perfil</a></li>
+            <li><a href="#projects" class="transition-colors hover:text-white" data-i18n="nav_projects">Proyectos</a></li>
+            <li><a href="#certifications" class="transition-colors hover:text-white" data-i18n="nav_certifications">Certificaciones</a></li>
+            <li><a href="#experience" class="transition-colors hover:text-white" data-i18n="nav_experience">Experiencia</a></li>
+            <li><a href="#contact" class="transition-colors hover:text-white" data-i18n="nav_contact">Contacto</a></li>
+          </ul>
+          <button id="lang-toggle" type="button" class="rounded-lg bg-slate-800 px-3 py-1.5 text-sm text-white transition-colors hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400" aria-label="Change language / Cambiar idioma">EN</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section id="top" class="border-b border-gray-800 bg-gradient-to-b from-indigo-950/40 to-gray-900">
+        <div class="mx-auto max-w-5xl px-4 pb-14 pt-14 md:pt-20">
+          <p class="text-sm text-gray-400"><i class="fa-solid fa-location-dot mr-2 text-blue-500" aria-hidden="true"></i>Bogotá DC, Colombia</p>
+          <h1 class="mt-3 text-4xl font-bold tracking-tight text-white md:text-6xl">Wilhen Figueredo Hernández</h1>
+          <p class="mt-3 text-lg font-semibold text-blue-400 md:text-xl" data-i18n="header_title">Network & Cloud Engineer | Redes · Automatización · AWS · Terraform</p>
+          <p class="mt-5 max-w-2xl text-base leading-relaxed text-gray-300" data-i18n="hero_intro">Ingeniero de Telecomunicaciones con más de 10 años operando redes corporativas. Hoy automatizo infraestructura de red y construyo arquitecturas en AWS con Terraform y GitHub Actions.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#projects" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" data-i18n="cta_projects">Ver proyectos</a>
+            <a id="cv-download" href="/CV_Wilhen_Figueredo_ES.pdf" download onclick="gtag('event', 'descarga_cv', { idioma: document.documentElement.lang === 'en' ? 'Inglés' : 'Español' })" class="inline-flex items-center gap-2 rounded-lg border border-gray-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
               <span data-i18n="download_cv">Descargar CV</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
               </svg>
             </a>
+            <a href="https://github.com/wilhen199" target="_blank" rel="noopener noreferrer" class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-slate-800 text-white transition-colors hover:bg-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github text-xl" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/wilhen-figueredo/" target="_blank" rel="noopener noreferrer" class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-slate-800 text-white transition-colors hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin text-xl" aria-hidden="true"></i></a>
           </div>
-        </div>
-        <!-- CONTACT LINKS & SOCIAL -->
-        <div class="mt-6 md:mt-0 flex flex-col items-center md:items-end space-y-3">
-          <div class="flex space-x-4 pt-2">
-            <button id="lang-toggle" class="bg-slate-800 hover:bg-blue-600 px-4 py-2 rounded-lg text-sm text-white transition">EN</button>
-            <a href="https://www.linkedin.com/in/wilhen-figueredo/" target="_blank" class="bg-slate-800 hover:bg-blue-600 p-3 rounded-lg text-white transition shadow-md" title="LinkedIn">
-              <i class="fa-brands fa-linkedin text-xl"></i>
-            </a>
-            <a href="https://github.com/wilhen199" target="_blank" class="bg-slate-800 hover:bg-gray-600 p-3 rounded-lg text-white transition shadow-md" title="GitHub">
-              <i class="fa-brands fa-github text-xl"></i>
-            </a>
-            <a href="https://wa.me/573219168292?text=Hola,%20vi%20tu%20CV%20y%20quiero%20contactarte" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-green-600 p-3 rounded-lg text-white transition shadow-md" title="WhatsApp">
-              <i class="fa-brands fa-whatsapp text-xl"></i>
-            </a>
-            <a href="mailto:wilhen199@gmail.com" target="_blank" class="bg-slate-800 hover:bg-blue-600 p-3 rounded-lg text-white transition shadow-md" title="Email">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- MAIN CONTAINER -->
-    <main class="max-w-5xl mx-auto px-4 py-10 space-y-8">
-      <!-- SECCIÓN PERFIL PROFESIONAL -->
-      <section class="bg-slate-800/40 border border-gray-800 p-8 rounded-xl shadow-md backdrop-blur-sm">
-        <h2 class="text-xl font-bold text-white mb-4 flex items-center border-b border-gray-700 pb-2">
-          <i class="fa-solid fa-user-tie text-blue-500 mr-2"></i>
-          <span data-i18n="profile_title"> Perfil Profesional </span>
-        </h2>
-        <div class="space-y-4 text-sm text-gray-300 leading-relaxed text-justify">
-          <p data-i18n="profile_p1">Ingeniero en Telecomunicaciones con más de 10 años operando redes e infraestructura crítica en entornos corporativos de varios países. Con una sólida base en ingeniería de redes y administración de servidores, redes multi-vendor (<span class="text-blue-400">Cisco, Huawei, Fortinet, Extreme</span>), SDN con <span class="text-blue-400">Cisco Catalyst Center</span>, automatización con <span class="text-blue-400">Python</span>, servidores <span class="text-blue-400">Windows/Linux</span> y monitoreo con <span class="text-blue-400">Zabbix</span>.</p>
-          <p data-i18n="profile_p2">A esa base le sumé infraestructura en la nube: construyo y automatizo arquitecturas en <span class="text-blue-400">AWS con Terraform</span> y automatizo el despliegue con <span class="text-blue-400">GitHub Actions</span>. Tengo las certificaciones AWS Solutions Architect Associate y Cloud Practitioner. Busco roles donde se combinen redes, automatización y cloud.</p>
+          <dl class="mt-12 grid grid-cols-2 gap-6 border-t border-gray-800 pt-8 md:grid-cols-4">
+            <div class="flex flex-col-reverse gap-1">
+              <dt class="text-sm text-gray-400" data-i18n="stat_1_label">años en infraestructura y redes</dt>
+              <dd class="text-3xl font-semibold text-white">10+</dd>
+            </div>
+            <div class="flex flex-col-reverse gap-1">
+              <dt class="text-sm text-gray-400" data-i18n="stat_2_label">de uptime en una plataforma de +500 usuarios</dt>
+              <dd class="text-3xl font-semibold text-white">99.9%</dd>
+            </div>
+            <div class="flex flex-col-reverse gap-1">
+              <dt class="text-sm text-gray-400" data-i18n="stat_3_label">switches Cisco Serie 9000 actualizados</dt>
+              <dd class="text-3xl font-semibold text-white">400+</dd>
+            </div>
+            <div class="flex flex-col-reverse gap-1">
+              <dt class="text-sm text-gray-400" data-i18n="stat_4_label">Certificaciones AWS</dt>
+              <dd class="text-3xl font-semibold text-white">2</dd>
+            </div>
+            <div class="flex flex-col-reverse gap-1">
+              <dt class="text-sm text-gray-400" data-i18n="stat_5_label">Certificación Azure</dt>
+              <dd class="text-3xl font-semibold text-white">1</dd>
+            </div>
+          </dl>
         </div>
       </section>
 
-      <!-- PROYECTOS CLOUD -->
-      <section id="projects" class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm scroll-mt-6">
-        <h2 class="text-xl font-bold text-white mb-2 flex items-center border-b border-gray-700 pb-2">
-          <i class="fa-solid fa-cloud text-blue-500 mr-2"></i>
-          <span data-i18n="projects_title">Proyectos cloud</span>
-        </h2>
-        <p class="text-sm text-gray-400 mb-2" data-i18n="projects_intro">Proyectos personales de laboratorio. Todo el código está en GitHub.</p>
-        <div class="divide-y divide-gray-800">
-          <!-- f1-api -->
-          <article class="py-5">
-            <h3 class="text-base font-semibold text-white flex flex-wrap items-center gap-2">
-              <i class="fa-solid fa-car-side"></i><span data-i18n="proj_1_title">F1 Stats: API en FastAPI y contenedor</span>
-              <span class="text-xs font-medium text-amber-300 border border-amber-500/40 rounded px-2 py-0.5" data-i18n="project_status_wip">En progreso</span>
-            </h3>
-            <img src="/assets/f1-standings-drivers.png" alt="f1-api" />
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_1_desc">Aplicación web con backend asíncrono en FastAPI (httpx), caché en memoria con TTL y bloqueo por URL, pruebas con pytest sin llamadas de red y contenedor Docker. El pipeline de GitHub Actions construye la imagen, levanta el contenedor, verifica su salud y ejecuta los tests. Uso el proyecto como laboratorio de despliegue en AWS (ECS Fargate); la automatización con Terraform está en progreso.</p>
-            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">FastAPI</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Docker</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">GitHub Actions</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">pytest</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">ECS Fargate</span>
-            </div>
-            <a href="https://github.com/wilhen199/f1-api" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
-          </article>
-
-          <!-- aws-three-tier -->
-          <article class="py-5">
-            <h3 class="text-base font-semibold text-white"><i class="fa-brands fa-aws"></i> <span data-i18n="proj_2_title">AWS three-tier con Terraform</span></h3>
-            <img src="/assets/diagram-aws-three-tier.png" alt="aws-three-tier" />
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_2_desc">Arquitectura de tres capas desplegada completamente con Terraform: VPC con subnets públicas y privadas en 2 zonas de disponibilidad, Application Load Balancer, Auto Scaling Group (2 a 4 instancias, escala por CPU) y RDS MySQL con la contraseña en Secrets Manager. Las instancias no tienen IP pública ni SSH: se acceden por SSM. El estado de Terraform vive en S3 con bloqueo en DynamoDB. El README lista las prácticas de seguridad aplicadas y las que faltarían en producción.</p>
-            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Terraform</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">VPC</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">ALB</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Auto Scaling</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">RDS MySQL</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Secrets Manager</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">IAM / SSM</span>
-            </div>
-            <a href="https://github.com/wilhen199/aws-three-tier" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
-          </article>
-
-          <!-- monitoring-stack -->
-          <article class="py-5">
-            <h3 class="text-base font-semibold text-white"><i class="fa-brands fa-docker"></i> <span data-i18n="proj_3_title">Stack de monitoreo con Docker Compose</span></h3>
-            <img src="/assets/monitoring-stack.png" alt="monitoring-stack" />
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_3_desc">Node Exporter, Prometheus y Grafana levantados con un solo comando. El datasource y el dashboard se aprovisionan desde archivos, con health checks, orden de arranque, volúmenes persistentes y red aislada. Complementa mi experiencia previa con Zabbix.</p>
-            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Docker Compose</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Prometheus</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Grafana</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Node Exporter</span>
-            </div>
-            <a href="https://github.com/wilhen199/monitoring-stack" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
-          </article>
-        </div>
-
-        <!-- cv-cloud -->
-        <article class="py-5 pb-0">
-          <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-globe"></i> <span data-i18n="proj_4_title">Este sitio: hosting serverless en AWS</span></h3>
-          <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="proj_4_desc">Sitio estático en un bucket S3 privado al que solo accede CloudFront mediante Origin Access Control. Dominio en Route 53 y HTTPS con certificado de ACM. Toda la infraestructura está en Terraform con estado remoto, y GitHub Actions ejecuta el despliegue.</p>
-          <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">S3</span>
-            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">CloudFront</span>
-            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Origin Access Control</span>
-            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Route 53</span>
-            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">ACM</span>
-            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Terraform</span>
-            <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">GitHub Actions</span>
+      <!-- PERFIL PROFESIONAL -->
+      <section id="about" class="scroll-mt-16 border-t border-gray-800">
+        <div class="mx-auto max-w-5xl px-4 py-14">
+          <h2 class="text-2xl font-semibold tracking-tight text-white" data-i18n="profile_title">Perfil Profesional</h2>
+          <div class="mt-4  space-y-4 text-sm leading-relaxed text-gray-300 text-justify">
+            <p data-i18n="profile_p1">Ingeniero en Telecomunicaciones con más de 10 años operando redes e infraestructura crítica en entornos corporativos de varios países. Con una sólida base en ingeniería de redes y administración de servidores, redes multi-vendor (<span class="text-blue-400">Cisco, Huawei, Fortinet, Extreme</span>), SDN con <span class="text-blue-400">Cisco Catalyst Center</span>, automatización con <span class="text-blue-400">Python</span>, servidores <span class="text-blue-400">Windows/Linux</span> y monitoreo con <span class="text-blue-400">Zabbix</span>.</p>
+            <p data-i18n="profile_p2">A esa base le sumé infraestructura en la nube: construyo y automatizo arquitecturas en <span class="text-blue-400">AWS con Terraform</span> y automatizo el despliegue con <span class="text-blue-400">GitHub Actions</span>. Tengo las certificaciones AWS Solutions Architect Associate y Cloud Practitioner. Busco roles donde se combinen redes, automatización y cloud.</p>
           </div>
-          <a href="https://github.com/wilhen199/cv-cloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
+      </section>
+
+      <!-- PROYECTOS -->
+      <section id="projects" class="scroll-mt-16">
+        <div class="mx-auto max-w-5xl px-4 py-14">
+          <h2 class="text-2xl font-semibold tracking-tight text-white" data-i18n="projects_title">Proyectos</h2>
+          <p class="mt-2 text-sm text-gray-400" data-i18n="projects_intro">Laboratorios personales y profesionales.</p>
+          <div class="mt-6 flex flex-wrap gap-2" role="group" data-i18n-aria-label="filter_label" aria-label="Filtrar proyectos">
+            <button type="button" data-filter="all" aria-pressed="true" class="filter-btn rounded-full border border-gray-700 px-4 py-1.5 text-sm text-gray-300 transition-colors hover:border-blue-500 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400" data-i18n="filter_all">Todos</button>
+            <button type="button" data-filter="cloud" aria-pressed="false" class="filter-btn rounded-full border border-gray-700 px-4 py-1.5 text-sm text-gray-300 transition-colors hover:border-blue-500 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400" data-i18n="filter_cloud">Cloud</button>
+            <button type="button" data-filter="network" aria-pressed="false" class="filter-btn rounded-full border border-gray-700 px-4 py-1.5 text-sm text-gray-300 transition-colors hover:border-blue-500 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400" data-i18n="filter_network">Redes e infraestructura</button>
+          </div>
+          <div class="mt-8 grid gap-6 md:grid-cols-2">
+
+        <!-- Project 1 - F1 API-->
+        <article class="flex flex-col overflow-hidden rounded-xl border border-gray-800 bg-slate-900/60 transition-colors hover:border-blue-500/50" data-category="cloud">
+          <button type="button" class="group relative block aspect-[16/9] w-full overflow-hidden bg-slate-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500" data-lightbox="/assets/f1-standings-drivers.png" data-i18n-aria-label="zoom_image" aria-label="Ampliar imagen">
+            <img src="/assets/f1-standings-drivers.png" alt="Captura de F1 Stats: tabla de posiciones de pilotos" data-i18n-alt="alt_f1" loading="lazy" class="h-full w-full bg-slate-950 object-contain" />
+            <span class="absolute bottom-2 right-2 rounded bg-slate-950/80 px-2 py-1 text-xs text-gray-200 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+          </button>
+          <div class="flex flex-1 flex-col p-5">
+            <p class="flex flex-wrap items-center gap-2 text-xs">
+              <i class="fa-solid fa-car-side"></i>
+              <span class="text-blue-400" data-i18n="badge_lab">Laboratorio personal</span>
+              <span class="rounded border border-amber-500/40 px-2 py-0.5 text-amber-300" data-i18n="project_status_wip">En progreso</span>
+            </p>
+            
+            <h3 class="mt-2 text-lg font-semibold leading-snug text-white" data-i18n="proj_1_title">F1 Stats: API en FastAPI y contenedor</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300" data-i18n="proj_1_desc">Backend asíncrono en FastAPI con caché TTL, pruebas con pytest y contenedor Docker. El pipeline de GitHub Actions construye la imagen, verifica su salud y ejecuta los tests. Laboratorio de despliegue en AWS (ECS Fargate); la automatización con Terraform está en progreso.</p>
+            <ul class="mt-4 flex flex-wrap gap-1.5">
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Python</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">FastAPI</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Docker</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">GitHub Actions</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">pytest</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">ECS Fargate</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Terraform</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">CI/CD</li>
+            </ul>
+            <a href="https://github.com/wilhen199/f1-api" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 pt-4 text-sm text-blue-400 hover:underline">
+              <i class="fa-brands fa-github" aria-hidden="true"></i><span data-i18n="view_repo">Ver código en GitHub</span>
+            </a>
+          </div>
         </article>
-      </section>
 
-      <!-- PROYECTOS PROFESIONALES: REDES Y AUTOMATIZACIÓN -->
-      <section id="network-projects" class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm scroll-mt-6">
-        <h2 class="text-xl font-bold text-white mb-2 flex items-center border-b border-gray-700 pb-2">
-          <i class="fa-solid fa-network-wired text-blue-500 mr-2"></i>
-          <span data-i18n="net_title">Proyectos profesionales en redes y automatización</span>
-        </h2>
-        <div class="divide-y divide-gray-800">
-          <article class="py-5">
-            <h3 class="text-base font-semibold text-white"><i class="fa-brands fa-python"></i> <span data-i18n="net_1_title">Auditoría y remediación automática de la red (NetDevOps)</span></h3>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_1_desc">Herramientas internas en Python (Netmiko / Pandas) para auditar, configurar de forma masiva y remediar vulnerabilidades en +1000 nodos de red. Resultado en el primer año: 30% menos de tiempo de respuesta y 25% más de compliance.</p>
-            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Netmiko</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Pandas</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Compliance</span>
-            </div>
-            <a href="https://github.com/wilhen199/networking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
-          </article>
+        <!-- Project 2 - AWS 3 Tier -->
+        <article class="flex flex-col overflow-hidden rounded-xl border border-gray-800 bg-slate-900/60 transition-colors hover:border-blue-500/50" data-category="cloud">
+          <button type="button" class="group relative block aspect-[16/9] w-full overflow-hidden bg-slate-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500" data-lightbox="/assets/diagram-aws-three-tier.png" data-i18n-aria-label="zoom_image" aria-label="Ampliar imagen">
+            <img src="/assets/diagram-aws-three-tier.png" alt="Diagrama de arquitectura de aws-three-tier" data-i18n-alt="alt_aws" loading="lazy" class="h-full w-full bg-white object-contain" />
+            <span class="absolute bottom-2 right-2 rounded bg-slate-950/80 px-2 py-1 text-xs text-gray-200 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+          </button>
+          <div class="flex flex-1 flex-col p-5">
+            <p class="flex flex-wrap items-center gap-2 text-xs">
+              <i class="fa-brands fa-aws"></i>
+              <span class="text-blue-400" data-i18n="badge_lab">Laboratorio personal</span>
+            </p>
+            <h3 class="mt-2 text-lg font-semibold leading-snug text-white" data-i18n="proj_2_title">AWS three-tier con Terraform</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300" data-i18n="proj_2_desc">VPC en 2 zonas de disponibilidad con ALB, Auto Scaling Group y RDS MySQL, todo en Terraform. Instancias sin IP pública ni SSH (acceso por SSM), contraseña en Secrets Manager y estado remoto en S3 con bloqueo en DynamoDB.</p>
+            <ul class="mt-4 flex flex-wrap gap-1.5">
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Terraform</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">VPC</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">ALB</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Auto Scaling</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">RDS MySQL</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Secrets Manager</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">IAM / SSM</li>
+            </ul>
+            <a href="https://github.com/wilhen199/aws-three-tier" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 pt-4 text-sm text-blue-400 hover:underline">
+              <i class="fa-brands fa-github" aria-hidden="true"></i><span data-i18n="view_repo">Ver código en GitHub</span>
+            </a>
+          </div>
+        </article>
 
-          <article class="py-5">
-            <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="net_2_title">Actualización masiva de 400 switches Cisco Serie 9000</span></h3>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_2_desc">Liderazgo de la migración y actualización con Cisco Catalyst Center para reducir la obsolescencia tecnológica y asegurar el parque de red regional. El compliance regional pasó de 14% a 60%.</p>
-            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Cisco Catalyst Center</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Catalyst 9000</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">SDN</span>
-            </div>
-          </article>
+        <!-- Project 3 - Monitoring Stack API -->
+        <article class="flex flex-col overflow-hidden rounded-xl border border-gray-800 bg-slate-900/60 transition-colors hover:border-blue-500/50" data-category="cloud">
+          <button type="button" class="group relative block aspect-[16/9] w-full overflow-hidden bg-slate-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500" data-lightbox="/assets/monitoring-stack.png" data-i18n-aria-label="zoom_image" aria-label="Ampliar imagen">
+            <img src="/assets/monitoring-stack.png" alt="Dashboard Node Exporter Full en Grafana con métricas de CPU, memoria, red y disco" data-i18n-alt="alt_grafana" loading="lazy" class="h-full w-full bg-slate-950 object-contain" />
+            <span class="absolute bottom-2 right-2 rounded bg-slate-950/80 px-2 py-1 text-xs text-gray-200 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+          </button>
+          <div class="flex flex-1 flex-col p-5">
+            <p class="flex flex-wrap items-center gap-2 text-xs">
+              <i class="fa-brands fa-docker"></i> 
+              <span class="text-blue-400" data-i18n="badge_lab">Laboratorio personal</span>
+            </p>
+            <h3 class="mt-2 text-lg font-semibold leading-snug text-white" data-i18n="proj_3_title">Stack de monitoreo con Docker Compose</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300" data-i18n="proj_3_desc">Node Exporter, Prometheus y Grafana con un solo comando. Datasource y dashboard aprovisionados desde archivos, con health checks y volúmenes persistentes. Complementa mi experiencia previa con Zabbix.</p>
+            <ul class="mt-4 flex flex-wrap gap-1.5">
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Docker Compose</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Prometheus</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Grafana</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Node Exporter</li>
+            </ul>
+            <a href="https://github.com/wilhen199/monitoring-stack" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 pt-4 text-sm text-blue-400 hover:underline">
+              <i class="fa-brands fa-github" aria-hidden="true"></i><span data-i18n="view_repo">Ver código en GitHub</span>
+            </a>
+          </div>
+        </article>
 
-          <article class="py-5">
-            <h3 class="text-base font-semibold text-white"><i class="fa-brands fa-python"></i> <span data-i18n="net_3_title">Scripts de configuración rápida multi-vendor</span></h3>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_3_desc">Scripts en Python para Cisco IOS-X, NX-OS, Extreme y Huawei que redujeron los errores humanos en 40% y los tiempos de resolución.</p>
-            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Cisco IOS-X / NX-OS</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Extreme</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Huawei</span>
-            </div>
-            <a href="https://github.com/wilhen199/networking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
-          </article>
+        <!-- Project 4 - Portfolio -->
+        <article class="flex flex-col overflow-hidden rounded-xl border border-gray-800 bg-slate-900/60 transition-colors hover:border-blue-500/50" data-category="cloud">
+          <button type="button" class="group relative block aspect-[16/9] w-full overflow-hidden bg-slate-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500" data-lightbox="/assets/cv-digital.png" data-i18n-aria-label="zoom_image" aria-label="Ampliar imagen">
+            <img src="/assets/cv-digital.png" alt="Diagrama de arquitectura de aws-three-tier" data-i18n-alt="alt_aws" loading="lazy" class="h-full w-full bg-white object-contain" />
+            <span class="absolute bottom-2 right-2 rounded bg-slate-950/80 px-2 py-1 text-xs text-gray-200 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+          </button>
+          <div class="flex flex-1 flex-col p-5">
+            <p class="flex flex-wrap items-center gap-2 text-xs">
+              <i class="fa-solid fa-globe"></i>
+              <span class="text-blue-400" data-i18n="badge_lab">Laboratorio personal</span>
+            </p>
+            <h3 class="mt-2 text-lg font-semibold leading-snug text-white" data-i18n="proj_4_title">Este sitio: hosting serverless en AWS</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300" data-i18n="proj_4_desc">Bucket S3 privado que solo lee CloudFront (Origin Access Control), dominio en Route 53 y HTTPS con ACM. Infraestructura en Terraform con estado remoto y despliegue con GitHub Actions.</p>
+            <ul class="mt-4 flex flex-wrap gap-1.5">
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">S3</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">CloudFront</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Origin Access Control</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Route 53</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">ACM</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Terraform</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">GitHub Actions</li>
+            </ul>
+            <a href="https://github.com/wilhen199/cv-cloud" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 pt-4 text-sm text-blue-400 hover:underline">
+              <i class="fa-brands fa-github" aria-hidden="true"></i><span data-i18n="view_repo">Ver código en GitHub</span>
+            </a>
+          </div>
+        </article>
 
-          <article class="py-5">
-            <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-cloud-arrow-up"></i> <span data-i18n="net_4_title">Backup de llamadas de Genesys Cloud a AWS S3</span></h3>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_4_desc">Integración entre Genesys Cloud y un bucket de S3 para asegurar la disponibilidad y la recuperación ante desastres del backup de llamadas.</p>
-            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Genesys Cloud</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">AWS S3</span>
-            </div>
-          </article>
+        <!-- Project 5 - Bkp Genesys >> S3 -->
+        <article class="flex flex-col overflow-hidden rounded-xl border border-gray-800 bg-slate-900/60 transition-colors hover:border-blue-500/50" data-category="cloud">
+          <div class="flex h-36 w-full flex-col justify-center bg-slate-950 px-6">
+            <p class="text-3xl font-semibold tracking-tight text-white md:text-4xl">Genesys → S3</p>
+            <p class="mt-1 text-sm text-gray-400" data-i18n="net_4_label">backup y recuperación ante desastres</p>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <p class="flex flex-wrap items-center gap-2 text-xs">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <span class="text-blue-400" data-i18n="badge_pro">Proyecto profesional</span>
+            </p>
+            <h3 class="mt-2 text-lg font-semibold leading-snug text-white" data-i18n="net_4_title">Backup de llamadas de Genesys Cloud a AWS S3</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300" data-i18n="net_4_desc">Integración entre Genesys Cloud y un bucket de S3 para asegurar la disponibilidad y la recuperación ante desastres del backup de llamadas.</p>
+            <ul class="mt-4 flex flex-wrap gap-1.5">
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Genesys Cloud</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">AWS S3</li>
+            </ul>
+          </div>
+        </article>
 
-          <article class="py-5">
-            <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-cloud-arrow-up"></i> <span data-i18n="net_5_title">Migración de telefonía On-premise a Genesys Cloud</span></h3>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_5_desc">Migración de infraestructura de telefonía basado en Asterisk hacia Genesys Cloud, asegurando la continuidad del negocio en 5 países (tráfico de llamadas, colas, agentes, flujos e IVRs).</p>
-            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Genesys Cloud</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Asterisk</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Linux</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">MySQL</span>
-            </div>
-          </article>
+        <!-- Project 6 - Vuln -->
+        <article class="flex flex-col overflow-hidden rounded-xl border border-gray-800 bg-slate-900/60 transition-colors hover:border-blue-500/50" data-category="network">
+          <div class="flex h-36 w-full flex-col justify-center bg-slate-950 px-6">
+            <p class="text-3xl font-semibold tracking-tight text-white md:text-4xl">+1000</p>
+            <p class="mt-1 text-sm text-gray-400" data-i18n="net_1_label">nodos de red auditados y remediados</p>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <p class="flex flex-wrap items-center gap-2 text-xs">
+              <i class="fa-brands fa-python"></i> 
+              <span class="text-blue-400" data-i18n="badge_pro">Proyecto profesional</span>
+            </p>
+            <h3 class="mt-2 text-lg font-semibold leading-snug text-white" data-i18n="net_1_title">Auditoría y remediación automática de la red (NetDevOps)</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300" data-i18n="net_1_desc">Herramientas internas en Python (Netmiko / Pandas) para auditar, configurar de forma masiva y remediar vulnerabilidades. Resultado en el primer año: 30% menos de tiempo de respuesta y 25% más de compliance.</p>
+            <ul class="mt-4 flex flex-wrap gap-1.5">
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Python</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Netmiko</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Pandas</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Compliance</li>
+            </ul>
+            <a href="https://github.com/wilhen199/networking" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 pt-4 text-sm text-blue-400 hover:underline">
+              <i class="fa-brands fa-github" aria-hidden="true"></i><span data-i18n="view_repo">Ver código en GitHub</span>
+            </a>
+          </div>
+        </article>
 
-          <article class="py-5">
-            <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-code"></i> <span data-i18n="net_6_title">Scripts de automatización para Genesys Cloud</span></h3>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_6_desc">Scripts en Python para la automatización, gestión y extracción de datos en la plataforma de Contact Center en la nube Genesys Cloud CX utilizando sus APIs oficiales.</p>
-            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Genesys Cloud</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Pandas</span>
-            </div>
-            <a href="https://github.com/wilhen199/Genesys_Cloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-blue-400 mt-3 hover:underline"> <i class="fa-brands fa-github mr-2"></i><span data-i18n="view_repo">Ver código en GitHub</span> </a>
-          </article>
+        <!-- Project 7 - Upgrade DNA Center -->
+        <article class="flex flex-col overflow-hidden rounded-xl border border-gray-800 bg-slate-900/60 transition-colors hover:border-blue-500/50" data-category="network">
+          <div class="flex h-36 w-full flex-col justify-center bg-slate-950 px-6">
+            <p class="text-3xl font-semibold tracking-tight text-white md:text-4xl">14% → 60%</p>
+            <p class="mt-1 text-sm text-gray-400" data-i18n="net_2_label">de compliance regional</p>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <p class="flex flex-wrap items-center gap-2 text-xs">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span class="text-blue-400" data-i18n="badge_pro">Proyecto profesional</span>
+            </p>
+            <h3 class="mt-2 text-lg font-semibold leading-snug text-white" data-i18n="net_2_title">Actualización masiva de 400 switches Cisco Serie 9000</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300" data-i18n="net_2_desc">Liderazgo de la migración y actualización con Cisco Catalyst Center para reducir la obsolescencia tecnológica y asegurar el parque de red regional. El compliance regional pasó de 14% a 60%.</p>
+            <ul class="mt-4 flex flex-wrap gap-1.5">
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Cisco Catalyst Center</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Catalyst 9000</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">SDN</li>
+            </ul>
+          </div>
+        </article>
 
-          <article class="py-5 pb-0">
-            <h3 class="text-base font-semibold text-white"><i class="fa-solid fa-chart-gantt"></i> <span data-i18n="net_7_title">Virtualizaciones</span></h3>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_7_desc1">- Implementación de Zabbix en Linux CentOS para monitoreo de infraestructura TI Linio LATAM.</p>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_7_desc2">- Virtualización de Servidor MySQL en Linux CentOS para réplica de información y métricas Call Center.</p>
-            <p class="text-sm text-gray-300 leading-relaxed mt-2 text-justify w-full" data-i18n="net_7_desc3">- Virtualización de Servidor Linux CentOS para almacenamiento de Backup e información de egresos, cuentas de correo.</p>
+        <!-- Project 8 - Networking scripts and automation -->
+        <article class="flex flex-col overflow-hidden rounded-xl border border-gray-800 bg-slate-900/60 transition-colors hover:border-blue-500/50" data-category="network">
+          <div class="flex h-36 w-full flex-col justify-center bg-slate-950 px-6">
+            <p class="text-3xl font-semibold tracking-tight text-white md:text-4xl">−40%</p>
+            <p class="mt-1 text-sm text-gray-400" data-i18n="net_3_label">de errores humanos</p>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <p class="flex flex-wrap items-center gap-2 text-xs">
+              <i class="fa-brands fa-python"></i> 
+              <span class="text-blue-400" data-i18n="badge_pro">Proyecto profesional</span>
+            </p>
+            <h3 class="mt-2 text-lg font-semibold leading-snug text-white" data-i18n="net_3_title">Scripts de configuración rápida multi-vendor</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300" data-i18n="net_3_desc">Scripts en Python para Cisco IOS-X, NX-OS, Extreme y Huawei que redujeron los errores humanos en 40% y los tiempos de resolución.</p>
+            <ul class="mt-4 flex flex-wrap gap-1.5">
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Python</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Cisco IOS-X / NX-OS</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Extreme</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Huawei</li>
+            </ul>
+            <a href="https://github.com/wilhen199/networking" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 pt-4 text-sm text-blue-400 hover:underline">
+              <i class="fa-brands fa-github" aria-hidden="true"></i><span data-i18n="view_repo">Ver código en GitHub</span>
+            </a>
+          </div>
+        </article>
 
-            <div class="flex flex-wrap gap-1.5 mt-3 text-xs text-gray-300">
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Linux</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">MySQL</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Zabbix</span>
-              <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Proxmox</span>
-            </div>
-          </article>
+        <!-- Project 9 - Migration Asterisk Genesys Cloud -->
+        <article class="flex flex-col overflow-hidden rounded-xl border border-gray-800 bg-slate-900/60 transition-colors hover:border-blue-500/50" data-category="network">
+          <div class="flex h-36 w-full flex-col justify-center bg-slate-950 px-6">
+            <p class="text-3xl font-semibold tracking-tight text-white md:text-4xl">Asterisk → Genesys</p>
+            <p class="mt-1 text-sm text-gray-400" data-i18n="net_5_label">continuidad del negocio en 5 países</p>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <p class="flex flex-wrap items-center gap-2 text-xs">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <span class="text-blue-400" data-i18n="badge_pro">Proyecto profesional</span>
+            </p>
+            <h3 class="mt-2 text-lg font-semibold leading-snug text-white" data-i18n="net_5_title">Migración de telefonía On-premise a Genesys Cloud</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300" data-i18n="net_5_desc">Migración de infraestructura de telefonía basado en Asterisk hacia Genesys Cloud, asegurando la continuidad del negocio en 5 países (tráfico de llamadas, colas, agentes, flujos e IVRs).</p>
+            <ul class="mt-4 flex flex-wrap gap-1.5">
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Genesys Cloud</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Asterisk</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Linux</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">MySQL</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Project 10 - Scripts Genesys -->
+        <article class="flex flex-col overflow-hidden rounded-xl border border-gray-800 bg-slate-900/60 transition-colors hover:border-blue-500/50" data-category="network">
+          <div class="flex h-36 w-full flex-col justify-center bg-slate-950 px-6">
+            <p class="text-3xl font-semibold tracking-tight text-white md:text-4xl">Python + API</p>
+            <p class="mt-1 text-sm text-gray-400" data-i18n="net_6_label">APIs oficiales de Genesys Cloud CX</p>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <p class="flex flex-wrap items-center gap-2 text-xs">
+              <i class="fa-solid fa-code"></i>
+              <span class="text-blue-400" data-i18n="badge_pro">Proyecto profesional</span>
+            </p>
+            <h3 class="mt-2 text-lg font-semibold leading-snug text-white" data-i18n="net_6_title">Scripts de automatización para Genesys Cloud</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300" data-i18n="net_6_desc">Scripts en Python para la automatización, gestión y extracción de datos en la plataforma de Contact Center en la nube Genesys Cloud CX utilizando sus APIs oficiales.</p>
+            <ul class="mt-4 flex flex-wrap gap-1.5">
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Genesys Cloud</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Python</li>
+              <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Pandas</li>
+            </ul>
+            <a href="https://github.com/wilhen199/Genesys_Cloud" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 pt-4 text-sm text-blue-400 hover:underline">
+              <i class="fa-brands fa-github" aria-hidden="true"></i><span data-i18n="view_repo">Ver código en GitHub</span>
+            </a>
+          </div>
+        </article>
+          </div>
         </div>
       </section>
 
-      <!-- DOS COLUMNAS -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- COLUMNA IZQUIERDA: CERTIFICACIONES Y HABILIDADES -->
-        <div class="space-y-8 lg:col-span-1">
-          <!-- CERTIFICACIONES CON LOGOS -->
-          <section class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm">
-            <h2 class="text-xl font-bold text-white mb-4 flex items-center border-b border-gray-700 pb-2">
-              <i class="fa-solid fa-award text-blue-500 mr-2"></i>
-              <span data-i18n="certifications_title"> Certificaciones </span>
-            </h2>
-            <div class="space-y-4">
-              <!--  AWS Solutions Architect -->
-              <div class="p-3 bg-slate-900/60 rounded-lg border border-gray-800 hover:border-blue-500/50 transition flex items-start space-x-3">
-                <div class="bg-slate-800 p-1.5 rounded-lg flex-shrink-0 w-12 h-12 flex items-center justify-center border border-gray-700">
-                  <img src="https://images.credly.com/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS SAA Logo" class="w-10 h-10 object-contain" />
-                </div>
-                <div>
-                  <p class="text-[10px] text-blue-400 font-semibold tracking-wider uppercase">Amazon Web Services</p>
-                  <p class="text-xs font-semibold text-white leading-tight">Solutions Architect – Associate</p>
-                  <a href="https://www.credly.com/badges/9ae9a036-b090-4162-b289-cfbd6f4b562f/public_url" target="_blank" class="inline-flex items-center text-[11px] text-blue-400 mt-1.5 hover:underline"> <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Badge details </a>
-                </div>
-              </div>
-
-              <!-- AWS Cloud Practitioner -->
-              <div class="p-3 bg-slate-900/60 rounded-lg border border-gray-800 hover:border-blue-500/50 transition flex items-start space-x-3">
-                <div class="bg-slate-800 p-1.5 rounded-lg flex-shrink-0 w-12 h-12 flex items-center justify-center border border-gray-700">
-                  <img src="https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS CCP Logo" class="w-10 h-10 object-contain" />
-                </div>
-                <div>
-                  <p class="text-[10px] text-blue-400 font-semibold tracking-wider uppercase">Amazon Web Services</p>
-                  <p class="text-xs font-semibold text-white leading-tight">Cloud Practitioner</p>
-                  <a href="https://www.credly.com/badges/62991730-59e4-40d3-a574-318d8bfef326/public_url" target="_blank" class="inline-flex items-center text-[11px] text-blue-400 mt-1.5 hover:underline"> <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Badge details </a>
-                </div>
-              </div>
-
-              <!-- Azure AZ-900 -->
-              <div class="p-3 bg-slate-900/60 rounded-lg border border-gray-800 hover:border-blue-500/50 transition flex items-start space-x-3">
-                <div class="bg-slate-800 p-1.5 rounded-lg flex-shrink-0 w-12 h-12 flex items-center justify-center border border-gray-700">
-                  <img src="https://images.credly.com/size/340x340/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" alt="Azure AZ900 Logo" class="w-10 h-10 object-contain" />
-                </div>
-                <div>
-                  <p class="text-[10px] text-blue-400 font-semibold tracking-wider uppercase">Microsoft</p>
-                  <p class="text-xs font-semibold text-white leading-tight">Azure Fundamentals (AZ-900)</p>
-                  <a href="https://www.credly.com/badges/8dd354bc-476b-4a88-ad1b-64fea6cfb352/public_url" target="_blank" class="inline-flex items-center text-[11px] text-blue-400 mt-1.5 hover:underline"> <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Badge details </a>
-                </div>
-              </div>
-
-              <!-- Scrum Master -->
-              <div class="p-3 bg-slate-900/60 rounded-lg border border-gray-800 hover:border-blue-500/50 transition flex items-start space-x-3">
-                <div class="bg-slate-800 p-1.5 rounded-lg flex-shrink-0 w-12 h-12 flex items-center justify-center border border-gray-700">
-                  <img src="https://images.credly.com/size/340x340/images/916bde6c-7eb3-40da-b698-993bdc8231f5/image.png" alt="Scrum Master Logo" class="w-10 h-10 object-contain" />
-                </div>
-                <div>
-                  <p class="text-[10px] text-blue-400 font-semibold tracking-wider uppercase">Certiprof</p>
-                  <p class="text-xs font-semibold text-white leading-tight">Scrum Master Professional (SMPC)</p>
-                  <a href="https://www.credly.com/badges/14a8ca4c-8692-49f9-88e6-8857b4740267/public_url" target="_blank" class="inline-flex items-center text-[11px] text-blue-400 mt-1.5 hover:underline"> <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Badge details </a>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- HABILIDADES TÉCNICAS -->
-          <section class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm">
-            <h2 class="text-xl font-bold text-white mb-4 flex items-center border-b border-gray-700 pb-2">
-              <i class="fa-solid fa-code text-blue-500 mr-2"></i>
-              <span data-i18n="skills_title">Habilidades técnicas</span>
-            </h2>
-            <div class="space-y-4 text-xs">
-              <div>
-                <span class="text-blue-400 font-semibold block mb-1" data-i18n="skills_cloud">Cloud e infraestructura como código</span>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">AWS: VPC / EC2 / ALB / Auto Scaling</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">RDS / S3 / DynamoDB</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">CloudFront / Route 53 / ACM</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">IAM / Secrets Manager / SSM</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Terraform</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800" data-i18n="skill_cloudformation">CloudFormation (básico)</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Azure (AZ-900)</span>
-                </div>
-              </div>
-              <div>
-                <span class="text-blue-400 font-semibold block mb-1" data-i18n="skills_networking">Redes</span>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Cisco Catalyst Center / DNA Center</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Cisco / Huawei / Extreme</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Fortinet / Sophos / pfSense</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">OSPF / BGP / RIP</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">VLANs / STP / LACP</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">SNMP / Wireless (WLAN)</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Cisco IOS-X / NX-OS</span>
-                </div>
-              </div>
-              <div>
-                <span class="text-blue-400 font-semibold block mb-1" data-i18n="skills_devops">Contenedores y CI/CD</span>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Docker / Docker Compose</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">GitHub Actions</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Git</span>
-                </div>
-              </div>
-              <div>
-                <span class="text-blue-400 font-semibold block mb-1" data-i18n="skills_automation">Automatización</span>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Python (Netmiko / Pandas / Requests / FastAPI)</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Bash</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Netbox API / REST APIs</span>
-                </div>
-              </div>
-              <div>
-                <span class="text-blue-400 font-semibold block mb-1" data-i18n="skills_observability">Monitoreo</span>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Grafana</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Zabbix</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Wireshark</span>
-                </div>
-              </div>
-              <div>
-                <span class="text-blue-400 font-semibold block mb-1" data-i18n="skills_systems">Sistemas y virtualización</span>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Linux</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Windows Server / Active Directory / GPO</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Hyper-V / Proxmox / VMware ESXi</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">MySQL</span>
-                  <span class="bg-slate-900 px-2 py-1 rounded border border-gray-800">Genesys Cloud / Asterisk</span>
-                </div>
-              </div>
-            </div>
-          </section>
+      <!-- CERTIFICACIONES -->
+      <section id="certifications" class="scroll-mt-16 border-t border-gray-800">
+        <div class="mx-auto max-w-5xl px-4 py-14">
+          <h2 class="text-2xl font-semibold tracking-tight text-white" data-i18n="certifications_title">Certificaciones</h2>
+          <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+        <li class="flex items-start gap-3 rounded-xl border border-gray-800 bg-slate-900/60 p-4 transition-colors hover:border-blue-500/50">
+          <img src="https://images.credly.com/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Solutions Architect Associate badge" loading="lazy" class="h-12 w-12 shrink-0 object-contain" />
+          <div>
+            <p class="text-xs text-blue-400">Amazon Web Services</p>
+            <p class="text-sm font-semibold leading-tight text-white">Solutions Architect – Associate</p>
+            <a href="https://www.credly.com/badges/9ae9a036-b090-4162-b289-cfbd6f4b562f/public_url" target="_blank" rel="noopener noreferrer" class="mt-1.5 inline-flex items-center gap-1 text-xs text-blue-400 hover:underline"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span data-i18n="badge_details">Ver credencial</span></a>
+          </div>
+        </li>
+        <li class="flex items-start gap-3 rounded-xl border border-gray-800 bg-slate-900/60 p-4 transition-colors hover:border-blue-500/50">
+          <img src="https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Cloud Practitioner badge" loading="lazy" class="h-12 w-12 shrink-0 object-contain" />
+          <div>
+            <p class="text-xs text-blue-400">Amazon Web Services</p>
+            <p class="text-sm font-semibold leading-tight text-white">Cloud Practitioner</p>
+            <a href="https://www.credly.com/badges/62991730-59e4-40d3-a574-318d8bfef326/public_url" target="_blank" rel="noopener noreferrer" class="mt-1.5 inline-flex items-center gap-1 text-xs text-blue-400 hover:underline"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span data-i18n="badge_details">Ver credencial</span></a>
+          </div>
+        </li>
+        <li class="flex items-start gap-3 rounded-xl border border-gray-800 bg-slate-900/60 p-4 transition-colors hover:border-blue-500/50">
+          <img src="https://images.credly.com/size/340x340/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" alt="Microsoft Azure Fundamentals badge" loading="lazy" class="h-12 w-12 shrink-0 object-contain" />
+          <div>
+            <p class="text-xs text-blue-400">Microsoft</p>
+            <p class="text-sm font-semibold leading-tight text-white">Azure Fundamentals (AZ-900)</p>
+            <a href="https://www.credly.com/badges/8dd354bc-476b-4a88-ad1b-64fea6cfb352/public_url" target="_blank" rel="noopener noreferrer" class="mt-1.5 inline-flex items-center gap-1 text-xs text-blue-400 hover:underline"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span data-i18n="badge_details">Ver credencial</span></a>
+          </div>
+        </li>
+        <li class="flex items-start gap-3 rounded-xl border border-gray-800 bg-slate-900/60 p-4 transition-colors hover:border-blue-500/50">
+          <img src="https://images.credly.com/size/340x340/images/916bde6c-7eb3-40da-b698-993bdc8231f5/image.png" alt="Scrum Master Professional badge" loading="lazy" class="h-12 w-12 shrink-0 object-contain" />
+          <div>
+            <p class="text-xs text-blue-400">Certiprof</p>
+            <p class="text-sm font-semibold leading-tight text-white">Scrum Master Professional (SMPC)</p>
+            <a href="https://www.credly.com/badges/14a8ca4c-8692-49f9-88e6-8857b4740267/public_url" target="_blank" rel="noopener noreferrer" class="mt-1.5 inline-flex items-center gap-1 text-xs text-blue-400 hover:underline"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span data-i18n="badge_details">Ver credencial</span></a>
+          </div>
+        </li>
+          </ul>
         </div>
+      </section>
 
-        <!-- CONTENIDO PRINCIPAL: EXPERIENCIA Y PROYECTOS -->
-        <div class="space-y-8 lg:col-span-2">
-          <!-- EXPERIENCA LABORAL -->
-          <section class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm">
-            <h2 class="text-xl font-bold text-white mb-6 flex items-center border-b border-gray-700 pb-2">
-              <i class="fa-solid fa-briefcase text-blue-500 mr-2"></i>
-              <span data-i18n="experience_title"> Experiencia Laboral </span>
-            </h2>
-            <div class="space-y-8 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-gray-800">
-              <!-- ROL 1 -->
-              <div class="relative pl-8">
-                <div class="absolute left-1.5 top-1.5 w-4 h-4 rounded-full bg-blue-500 border-4 border-slate-900"></div>
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start">
-                  <div>
-                    <h3 class="text-lg font-bold text-white">NetSecOps Analyst</h3>
-                    <p class="text-sm font-medium text-blue-4xl">Falabella Tecnología Corporativa / Grupo Falabella</p>
-                  </div>
-                  <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium mt-1 md:mt-0" data-i18n="experience_1_dates"> Agosto, 2024 – Mayo, 2026 </span>
-                </div>
-                <ul class="mt-3 space-y-2 text-sm text-gray-300 list-disc list-inside">
-                  <li data-i18n="experience_1_description_1">Liderazgo y ejecución de proyectos regionales de networking, seguridad e infraestructura de gran escala en campus corporativo, mejorando la velocidad de despliegue en 15% en Chile, Colombia y Perú.</li>
-                  <li data-i18n="experience_1_description_2">Liderazgo y ejecución de migración y actualización masiva de 400 switches Cisco Serie 9000 mediante Cisco Catalyst Center, pasando de un 14% a 60% en el compliance regional.</li>
-                  <li data-i18n="experience_1_description_3">Decomiso y reemplazo seguro de sistemas heredados (como Cisco Prime) debido a vulnerabilidades latentes.</li>
-                  <li data-i18n="experience_1_description_4">Automatización de tareas repetitivas de red mediante scripts en Python y consumo de la API de Netbox, reduciendo tiempos de aprovisionamiento.</li>
-                  <li data-i18n="experience_1_description_5">Soporte nivel 2 en redes LAN, WLAN y WAN para entornos multi-vendor (Cisco, Huawei, Extreme).</li>
-                  <li data-i18n="experience_1_description_6">Desarrollo de scripts en Python para tareas de compliance, remediación de vulnerabilidades y configuración masiva.</li>
-                  <li data-i18n="experience_1_description_7">Coordinación técnica regional con equipos de infraestructura y proveedores (Argentina, Chile, Perú, Colombia).</li>
-                </ul>
-              </div>
-
-              <!-- ROL 2 -->
-              <div class="relative pl-8">
-                <div class="absolute left-1.5 top-1.5 w-4 h-4 rounded-full bg-gray-600 border-4 border-slate-900"></div>
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start">
-                  <div>
-                    <h3 class="text-lg font-bold text-white" data-i18n="experience_2_title">Especialista IT / Platform Engineer</h3>
-                    <p class="text-sm font-medium text-blue-4xl">Linio.com Colombia - LATAM / Falabella.com</p>
-                  </div>
-                  <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium mt-1 md:mt-0" data-i18n="experience_2_dates"> Septiembre, 2019 – Agosto, 2024 </span>
-                </div>
-                <ul class="mt-3 space-y-2 text-sm text-gray-300 list-disc list-inside">
-                  <li data-i18n="experience_2_description_1">Administración y soporte L2/L3 de una plataforma híbrida con Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu, CentOS) para +500 usuarios, con 99.9% de uptime.</li>
-                  <li data-i18n="experience_2_description_2">Migración crítica de telefonía On-Premise (Asterisk) a Genesys Cloud con continuidad en 5 países (flujos, IVRs y tráfico de llamadas), y administración central de la telefonía regional con 99.3% de disponibilidad.</li>
-                  <li data-i18n="experience_2_description_3">Seguridad perimetral con firewalls y túneles VPN Site-Site / SSL (Fortinet, Sophos, pfSense).</li>
-                  <li data-i18n="experience_2_description_4">Implementación de Zabbix para el monitoreo proactivo (alertas y métricas) de la infraestructura TI de Linio LATAM.</li>
-                  <li data-i18n="experience_2_description_5">Virtualización de servidores y servicios con Hyper-V y Proxmox; gestión de licenciamiento y permisos en Office 365 / SharePoint.</li>
-                </ul>
-              </div>
-
-              <!-- ROL 3 -->
-              <div class="relative pl-8">
-                <div class="absolute left-1.5 top-1.5 w-4 h-4 rounded-full bg-gray-600 border-4 border-slate-900"></div>
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start">
-                  <div>
-                    <h3 class="text-lg font-bold text-white" data-i18n="experience_3_title">Supervisor IT</h3>
-                    <p class="text-sm font-medium text-blue-4xl">Linio.com Venezuela</p>
-                  </div>
-                  <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium mt-1 md:mt-0" data-i18n="experience_3_dates"> Agosto, 2016 – Septiembre, 2019 </span>
-                </div>
-                <ul class="mt-3 space-y-2 text-sm text-gray-300 list-disc list-inside">
-                  <li data-i18n="experience_3_description_1">Administración de Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu Server, CentOS) para +500 usuarios, con 99.9% de uptime.</li>
-                  <li data-i18n="experience_3_description_2">Administración de la telefonía Asterisk y la base de datos MySQL de la solución, de firewalls y de VPN Site-Site / SSL.</li>
-                  <li data-i18n="experience_3_description_3">Implementación de Zabbix, análisis de rendimiento con Wireshark y logs, y documentación de los procesos y políticas de administración de TI.</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <!-- EDUCACIÓN -->
-          <section class="bg-slate-800/50 border border-gray-800 p-6 rounded-xl shadow-sm">
-            <h2 class="text-xl font-bold text-white mb-4 flex items-center border-b border-gray-700 pb-2">
-              <i class="fa-solid fa-graduation-cap text-blue-500 mr-2"></i>
-              <span data-i18n="education_title">Educación</span>
-            </h2>
-            <div class="flex justify-between items-start text-sm">
-              <div>
-                <h3 class="font-bold text-white">
-                  <span data-i18n="education_1_title"> Pregrado en Ingeniería de Telecomunicaciones </span>
-                </h3>
-                <p class="text-blue-4xl font-medium">Universidad Nacional Experimental De Las Fuerzas Armadas - Venezuela</p>
-              </div>
-              <span class="text-xs bg-slate-900 px-2.5 py-1 rounded border border-gray-800 text-gray-400 font-medium" data-i18n="education_1_dates"> Graduado (2012) </span>
-            </div>
-          </section>
+      <!-- HABILIDADES -->
+      <section id="about" class="scroll-mt-16 border-t border-gray-800">
+        <div class="mx-auto max-w-5xl px-4 py-14">
+          <h3 class="mt-12 text-lg font-semibold text-white" data-i18n="skills_title">Habilidades técnicas</h3>
+          <div class="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <h4 class="text-sm font-semibold text-white" data-i18n="skills_cloud">Cloud e infraestructura como código</h4>
+          <ul class="mt-2 flex flex-wrap gap-1.5">
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">AWS: VPC / EC2 / ALB / Auto Scaling / S3 / IAM / Secrets Manager / SSM / RDS / CloudFront / Route 53</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Azure: VMs / Vnet / Blob Storage / Entra ID / Application Gateway - Load Balancer / VM Scale Sets / Azure Key Vault / Azure Front Door / Azure DNS</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Terraform</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300"><span data-i18n="skill_cloudformation">CloudFormation (básico)</span></li>
+          </ul>
         </div>
-      </div>
+        <div>
+          <h4 class="text-sm font-semibold text-white" data-i18n="skills_networking">Redes</h4>
+          <ul class="mt-2 flex flex-wrap gap-1.5">
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Cisco Catalyst Center / DNA Center</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Cisco / Huawei / Extreme</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Fortinet / Sophos / pfSense</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">OSPF / BGP / RIP</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">VLANs / STP / LACP</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">SNMP / Wireless (WLAN)</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Cisco IOS-X / NX-OS</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-white" data-i18n="skills_automation">Automatización</h4>
+          <ul class="mt-2 flex flex-wrap gap-1.5">
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Python (Netmiko / Pandas / Requests / FastAPI)</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Bash</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Netbox API / REST APIs</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-white" data-i18n="skills_devops">Contenedores y CI/CD</h4>
+          <ul class="mt-2 flex flex-wrap gap-1.5">
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Docker / Docker Compose</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">GitHub Actions</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Git</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-white" data-i18n="skills_observability">Monitoreo</h4>
+          <ul class="mt-2 flex flex-wrap gap-1.5">
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Prometheus</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Grafana</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Zabbix</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Wireshark</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-white" data-i18n="skills_systems">Sistemas y virtualización</h4>
+          <ul class="mt-2 flex flex-wrap gap-1.5">
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Linux</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Windows Server / Active Directory / GPO</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Hyper-V / Proxmox / VMware ESXi</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">MySQL</li>
+            <li class="rounded border border-gray-800 bg-slate-950 px-2 py-1 text-xs text-gray-300">Genesys Cloud / Asterisk</li>
+          </ul>
+        </div>
+          </div>
+        </div>
+      </section>
+
+            <!-- EXPERIENCIA Y EDUCACIÓN -->
+      <section id="experience" class="scroll-mt-16 border-t border-gray-800">
+        <div class="mx-auto max-w-5xl px-4 py-14">
+          <i class="fa-solid fa-briefcase text-blue-500 mr-2"></i>
+          <h2 class="text-2xl font-semibold tracking-tight text-white" data-i18n="experience_title">Experiencia Laboral</h2>
+          <ol class="mt-8 space-y-10">
+      <li class="grid gap-2 md:grid-cols-[13rem_1fr] md:gap-8">
+        <div>
+          <p class="text-sm text-gray-400" data-i18n="experience_1_dates">Agosto, 2024 – Mayo, 2026</p>
+          <p class="mt-1 text-sm font-medium text-blue-400">Falabella Tecnología Corporativa / Grupo Falabella</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-white">NetSecOps Analyst</h3>
+          <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-gray-300">
+            <li data-i18n="experience_1_description_1">Liderazgo y ejecución de proyectos regionales de networking y seguridad en campus corporativo, mejorando la velocidad de despliegue en 15% en Chile, Colombia y Perú.</li>
+            <li data-i18n="experience_1_description_2">Liderazgo y ejecución de migración y actualización masiva de 400 switches Cisco Serie 9000 mediante Cisco Catalyst Center, pasando de un 14% a 60% en el compliance regional.</li>
+            <li data-i18n="experience_1_description_3">Decomiso y reemplazo seguro de sistemas heredados (como Cisco Prime) debido a vulnerabilidades latentes.</li>
+            <li data-i18n="experience_1_description_4">Automatización de tareas repetitivas de red mediante scripts en Python y consumo de la API de Netbox, reduciendo tiempos de aprovisionamiento.</li>
+            <li data-i18n="experience_1_description_5">Soporte nivel 2 en redes LAN, WLAN y WAN para entornos multi-vendor (Cisco, Huawei, Extreme).</li>
+            <li data-i18n="experience_1_description_6">Desarrollo de scripts en Python para tareas de compliance, remediación de vulnerabilidades y configuración masiva.</li>
+            <li data-i18n="experience_1_description_7">Coordinación técnica regional con equipos de infraestructura, proveedores y seguridad (Argentina, Chile, Perú, Colombia).</li>
+          </ul>
+        </div>
+      </li>
+      <li class="grid gap-2 md:grid-cols-[13rem_1fr] md:gap-8">
+        <div>
+          <p class="text-sm text-gray-400" data-i18n="experience_2_dates">Septiembre, 2019 – Agosto, 2024</p>
+          <p class="mt-1 text-sm font-medium text-blue-400">Linio.com Colombia - LATAM / Falabella.com</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-white" data-i18n="experience_2_title">Platform Engineer</h3>
+          <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-gray-300">
+            <li data-i18n="experience_2_description_1">Administración y soporte L2/L3 de una plataforma híbrida con Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu, CentOS) para +500 usuarios, con 99.9% de uptime.</li>
+            <li data-i18n="experience_2_description_2">Migración crítica de telefonía On-Premise (Asterisk) a Genesys Cloud con continuidad en 5 países (flujos, IVRs y tráfico de llamadas), y administración central de la telefonía regional con 99.3% de disponibilidad.</li>
+            <li data-i18n="experience_2_description_3">Seguridad perimetral con firewalls y túneles VPN Site-Site / SSL (Fortinet, Sophos, pfSense).</li>
+            <li data-i18n="experience_2_description_4">Implementación de Zabbix para el monitoreo proactivo (alertas y métricas) de la infraestructura TI de Linio LATAM.</li>
+            <li data-i18n="experience_2_description_5">Virtualización de servidores y servicios con Hyper-V y Proxmox, incluidos MySQL (réplica de información y métricas del Call Center) y Linux (backups); gestión de licenciamiento y permisos en Office 365 / SharePoint.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="grid gap-2 md:grid-cols-[13rem_1fr] md:gap-8">
+        <div>
+          <p class="text-sm text-gray-400" data-i18n="experience_3_dates">Agosto, 2016 – Septiembre, 2019</p>
+          <p class="mt-1 text-sm font-medium text-blue-400">Linio.com Venezuela</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-white" data-i18n="experience_3_title">Supervisor IT</h3>
+          <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-gray-300">
+            <li data-i18n="experience_3_description_1">Administración de Windows Server (Active Directory, GPO, WSUS) y Linux (Ubuntu Server, CentOS) para +500 usuarios, con 99.9% de uptime.</li>
+            <li data-i18n="experience_3_description_2">Administración de la telefonía Asterisk y la base de datos MySQL de la solución, de firewalls y de VPN Site-Site / SSL.</li>
+            <li data-i18n="experience_3_description_3">Implementación de Zabbix, análisis de rendimiento con Wireshark y logs, y documentación de los procesos y políticas de administración de TI.</li>
+          </ul>
+        </div>
+      </li>
+            <li class="grid gap-2 md:grid-cols-[13rem_1fr] md:gap-8">
+              <div>
+                <p class="text-sm text-gray-400" data-i18n="education_1_dates">Graduado (2012)</p>
+                <p class="mt-1 text-sm font-medium text-blue-400" data-i18n="education_title">Educación</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white" data-i18n="education_1_title">Pregrado en Ingeniería de Telecomunicaciones</h3>
+                <p class="mt-1 text-sm text-gray-300">Universidad Nacional Experimental De Las Fuerzas Armadas - Venezuela</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contact" class="scroll-mt-16 border-t border-gray-800">
+        <div class="mx-auto max-w-5xl px-4 py-14">
+          <h2 class="text-2xl font-semibold tracking-tight text-white" data-i18n="contact_title">Contacto</h2>
+          <p class="mt-3 max-w-2xl text-gray-300" data-i18n="contact_text">Estoy abierto a oportunidades como Network Engineer, Network Automation y Cloud Engineer.</p>
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <a href="mailto:wilhen199@gmail.com" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"><i class="fa-solid fa-envelope" aria-hidden="true"></i>wilhen199@gmail.com</a>
+            <a href="https://wa.me/573219168292?text=Hola,%20vi%20tu%20portfolio%20y%20quiero%20contactarte" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-gray-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-green-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp</a>
+            <a href="https://www.linkedin.com/in/wilhen-figueredo/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-gray-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"><i class="fa-brands fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://github.com/wilhen199" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-gray-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 border-t border-gray-800 py-6 mt-12 text-center text-xs text-gray-500">
-      <p data-i18n="footer_text">© 2026 Wilhen Figueredo Hernández. Alojado en infraestructura Serverless de AWS.</p>
+        <!-- FOOTER -->
+    <footer class="border-t border-gray-800 bg-slate-950 py-6 text-center text-xs text-gray-500">
+      <p data-i18n="footer_text">© 2026 Wilhen Figueredo Hernández. Alojado en infraestructura serverless de AWS.</p>
     </footer>
+
+    <!-- LIGHTBOX -->
+    <dialog id="lightbox" class="m-auto max-h-[92vh] max-w-[96vw] overflow-auto rounded-lg border border-gray-700 bg-slate-950 p-0 text-white">
+      <div class="relative">
+        <button id="lightbox-close" type="button" class="absolute right-2 top-2 rounded-md bg-slate-900/90 px-3 py-1.5 text-sm text-white hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400" data-i18n-aria-label="close_image" aria-label="Cerrar"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <img id="lightbox-image" src="" alt="" class="block max-h-[92vh] max-w-[96vw] bg-white object-contain" />
+      </div>
+    </dialog>
+
     <script src="js/translations.js"></script>
     <script src="js/language.js"></script>
+    <script src="js/portfolio.js"></script>
+
   </body>
 </html>
