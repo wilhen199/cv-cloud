@@ -24,7 +24,7 @@ const translations = {
 
     projects_title: "Proyectos",
     projects_intro: "Laboratorios personales y profesionales.",
-    project_status_wip: "En progreso",
+    /* project_status_wip: "En progreso", */
     view_repo: "Ver código en GitHub",
     net_6_label: "APIs oficiales de Genesys Cloud CX",
     net_5_label: "continuidad del negocio en 5 países",
@@ -45,7 +45,7 @@ const translations = {
     filter_label: "Filtrar proyectos",
 
     proj_1_title: "F1 Stats: API en FastAPI y contenedor",
-    proj_1_desc: `Aplicación web con backend asíncrono en FastAPI (httpx), caché en memoria con TTL, pruebas con pytest y contenedor Docker. El pipeline de GitHub Actions construye la imagen, levanta el contenedor, verifica su salud y ejecuta los tests. Laboratorio de despliegue en AWS (ECS Fargate); la automatización con Terraform está en progreso.`,
+    proj_1_desc: `Aplicación web con backend asíncrono en FastAPI (httpx), caché en memoria con TTL, pruebas con pytest y contenedor Docker. El pipeline de GitHub Actions construye la imagen, levanta el contenedor, verifica su salud y ejecuta los tests. Laboratorio de despliegue en AWS (ECS Fargate) y automatización con Terraform.`,
 
     proj_2_title: "AWS three-tier con Terraform",
     proj_2_desc: `VPC en 2 zonas de disponibilidad con ALB, Auto Scaling Group y RDS y RDS MySQL, todo en terraform. Instancias sin IP pública ni SSH (acceso por SSM), contraseña en Secrets Manager y estado remoto en S3 con bloqueo en DynamoDB. El estado de Terraform vive en S3 con bloqueo en DynamoDB.`,
@@ -144,7 +144,7 @@ const translations = {
 
     projects_title: "Projects",
     projects_intro: "Personal and professional lab projects.",
-    project_status_wip: "In progress",
+    /* project_status_wip: "In progress", */
     view_repo: "View code on GitHub",
     net_6_label: "official Genesys Cloud CX APIs",
     net_5_label: "business continuity in 5 countries",
@@ -165,7 +165,7 @@ const translations = {
     filter_label: "Filter projects",
 
     proj_1_title: "F1 Stats: FastAPI API and container",
-    proj_1_desc: `Async FastAPI backend with a TTL cache, pytest tests, and a Docker container. The GitHub Actions pipeline builds the image, checks its health, and runs the tests. AWS deployment lab (ECS Fargate); automation with Terraform is in progress.`,
+    proj_1_desc: `Async FastAPI backend with a TTL cache, pytest tests, and a Docker container. The GitHub Actions pipeline builds the image, checks its health, and runs the tests. AWS deployment lab (ECS Fargate) and automation with Terraform.`,
 
     proj_2_title: "AWS three-tier with Terraform",
     proj_2_desc: `VPC across 2 availability zones with an ALB, an Auto Scaling Group, and RDS MySQL, all in Terraform. Instances have no public IP or SSH (access through SSM), the password is in Secrets Manager, and remote state is in S3 with DynamoDB locking.`,
