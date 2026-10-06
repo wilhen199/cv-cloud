@@ -1,6 +1,6 @@
-[![Terraform CI CD Pipeline](https://github.com/wilhen199/cv-cloud/actions/workflows/deploy.yml/badge.svg)](https://github.com/wilhen199/cv-cloud/actions/workflows/deploy.yml)
-
 # Cloud-Resume & Infrastructure as Code (IaC) 🚀
+
+[![Terraform CI CD Pipeline](https://github.com/wilhen199/cv-cloud/actions/workflows/deploy.yml/badge.svg)](https://github.com/wilhen199/cv-cloud/actions/workflows/deploy.yml)
 
 Este repositorio contiene la arquitectura, el código fuente y el pipeline de automatización para el despliegue de mi Hoja de Vida/CV Digital ejecutándose de manera 100% Serverless sobre Amazon Web Services (AWS).
 
@@ -8,9 +8,7 @@ Este repositorio contiene la arquitectura, el código fuente y el pipeline de au
 
 ## 🛠️ Arquitectura del Sistema
 
-<p align="center">
-  <img src="assets/cv-digital.png" alt="Diagrama de Arquitectura AWS" width="850">
-</p>
+![alt Diagrama de Arquitectura AWS](assets/cv-digital.png)
 
 El diseño se enfoca en la alta disponibilidad, seguridad perimetral, bajo costo y optimización para dispositivos móviles, mitigando las restricciones de protocolos HTTP en redes celulares.
 
@@ -47,7 +45,8 @@ El ciclo de vida de la infraestructura está totalmente automatizado mediante **
 │   └── outputs.tf                  # Salidas del sistema
 └── website/
     ├──js/
-    |   ├── languaje.js             # Funciones pra cambio de idioma (ES/EN). persistencia en localStorage y cambio de idioma dinámico
+    |   ├── languaje.js             # Funciones para cambio de idioma (ES/EN). persistencia en localStorage y cambio de idioma dinámico
+    |   ├── portfolio.js            # Lógica interactiva para filtrado de proyectos por categoría y vista previa de imágenes en modal (lightbox).
     |   ├── translations.js         # Diccionario de traducciones
     ├── index.html                  # Código de la aplicación web (Tailwind CSS)
     ├── CV_Wilhen_Figueredo_ES.pdf  # Versión tradicional del CV descargable en español
