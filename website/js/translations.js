@@ -61,7 +61,7 @@ const translations = {
     net_2_title: "Actualización masiva de 400 switches Cisco Serie 9000",
     net_2_desc: "Liderazgo de la migración y actualización con Cisco Catalyst Center para reducir la obsolescencia tecnológica y asegurar el parque de red regional. El compliance regional pasó de 14% a 60%.",
     net_3_title: "Scripts de configuración rápida multi-vendor",
-    net_3_desc: "Scripts en Python para Cisco IOS-X, NX-OS, Extreme y Huawei que redujeron los errores humanos en 40% y los tiempos de resolución.",
+    net_3_desc: "Scripts en Python para Cisco IOS, NX-OS, Extreme y Huawei que redujeron los errores humanos en 40% y los tiempos de resolución.",
     net_4_title: "Backup de llamadas de Genesys Cloud a AWS S3",
     net_4_desc: "Integración entre Genesys Cloud y un bucket de S3 para asegurar la disponibilidad y la recuperación ante desastres del backup de llamadas.",
     net_5_title: "Migración de telefonía On-premise a Genesys Cloud",
@@ -72,7 +72,7 @@ const translations = {
     certifications_title: "Certificaciones",
 
     skills_title: "Habilidades técnicas",
-    skills_cloud: "Cloud e infraestructura como código",
+    skills_cloud: "Cloud e IaC",
     skills_devops: "Contenedores y CI/CD",
     skills_observability: "Monitoreo",
     skills_networking: "Redes",
@@ -171,7 +171,7 @@ const translations = {
     proj_2_desc: `VPC across 2 availability zones with an ALB, an Auto Scaling Group, and RDS MySQL, all in Terraform. Instances have no public IP or SSH (access through SSM), the password is in Secrets Manager, and remote state is in S3 with DynamoDB locking.`,
 
     proj_3_title: "Monitoring stack with Docker Compose",
-    proj_3_desc: "Node Exporter, Prometheus, and Grafana with a single command. Datasource and dashboard are provisioned from files, with health checks and persistent volumes. It complements my earlier experience with Zabbix.",
+    proj_3_desc: "Node Exporter, Prometheus, and Grafana with a single command. Datasource and dashboard are provisioned from files, with health checks and persistent volumes.",
 
     proj_4_title: "This site: serverless hosting on AWS",
     proj_4_desc: "Private S3 bucket that only CloudFront can read (Origin Access Control), domain on Route 53, and HTTPS with ACM. Infrastructure in Terraform with remote state and deployment with GitHub Actions.",
@@ -181,7 +181,7 @@ const translations = {
     net_2_title: "Mass upgrade of 400 Cisco 9000 Series switches",
     net_2_desc: "Led the migration and upgrade with Cisco Catalyst Center to reduce technological obsolescence and secure the regional network estate. Regional compliance rose from 14% to 60%.",
     net_3_title: "Multi-vendor quick configuration scripts",
-    net_3_desc: "Python scripts for Cisco IOS-X, NX-OS, Extreme, and Huawei that cut human errors by 40% and reduced resolution times.",
+    net_3_desc: "Python scripts for Cisco IOS, NX-OS, Extreme, and Huawei that cut human errors by 40% and reduced resolution times.",
     net_4_title: "Genesys Cloud call backup to AWS S3",
     net_4_desc: "Integration between Genesys Cloud and an S3 bucket to ensure availability and disaster recovery of the call backup.",
     net_5_title: "Migration telephony infraestructure On-premise to Genesys Cloud",
@@ -192,7 +192,7 @@ const translations = {
     certifications_title: "Certifications",
 
     skills_title: "Technical Skills",
-    skills_cloud: "Cloud and infrastructure as code",
+    skills_cloud: "Cloud and IaC",
     skills_devops: "Containers and CI/CD",
     skills_observability: "Monitoring",
     skills_networking: "Networking",
