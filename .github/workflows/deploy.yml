@@ -33,7 +33,11 @@ jobs:
           aws-region: us-east-1
 
       - name: Terraform Init
-        run: terraform init
+        run: |
+          terraform init\
+            -backend-config="bucket=wf-tfstate-cv" \
+            -backend-config="key=cv-digital/terraform.tfstate" \
+            -backend-config="region=us-east-1"
         working-directory: ./terraform
 
       - name: Terraform Format Check
