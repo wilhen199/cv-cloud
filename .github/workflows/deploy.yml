@@ -30,14 +30,14 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-          aws-region: us-east-1
+          aws-region: ${{ vars.AWS_REGION }}
 
       - name: Terraform Init
         run: |
           terraform init\
-            -backend-config="bucket=wf-tfstate-cv" \
-            -backend-config="key=cv-digital/terraform.tfstate" \
-            -backend-config="region=us-east-1"
+            -backend-config="bucket=${{ vars.TF_BACKEND_BUCKET }}" \
+            -backend-config="key=${{ vars.TF_BACKEND_KEY }}" \
+            -backend-config="region=${{ vars.AWS_REGION }}"
         working-directory: ./terraform
 
       - name: Terraform Format Check
